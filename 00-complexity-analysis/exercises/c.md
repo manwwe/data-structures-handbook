@@ -39,6 +39,8 @@ O(n) + O(n) = O(2n) = O(n)
 
 </details>
 
+---
+
 ### Exercise 2: Nested Loops
 
 What is the time complexity of this code?
@@ -67,6 +69,8 @@ For example, if `n = 3`, it prints `3 × 3 = 9` pairs, including pairs where bot
 **Space complexity:** `O(1)` auxiliary space. The function prints each pair immediately without storing the pairs.
 
 </details>
+
+---
 
 ### Exercise 3: A Shrinking Inner Loop
 
@@ -103,6 +107,8 @@ For example, if `n = 3`, the function prints `2 + 1 + 0 = 3` pairs. This counts 
 
 </details>
 
+---
+
 ### Exercise 4: Two Arrays and a Condition
 
 What is the time complexity of this code? The arrays can have different lengths.
@@ -136,6 +142,8 @@ Keep both variables because the array lengths can grow independently. If both le
 
 </details>
 
+---
+
 ### Exercise 5: Accessing One Element
 
 What are the time and space complexities of this code?
@@ -160,6 +168,8 @@ The function checks the length and prints at most one element. It does not go th
 **Space complexity:** O(1). No extra storage grows with the input.
 
 </details>
+
+---
 
 ### Exercise 6: Skipping Every Other Element
 
@@ -186,6 +196,8 @@ The loop visits indices 0, 2, 4, and so on. For n = 6, it prints 3 elements. In 
 
 </details>
 
+---
+
 ### Exercise 7: Halving a Number
 
 What are the time and space complexities of this code?
@@ -211,6 +223,8 @@ Assume n >= 1. Each iteration halves n using integer division. For n = 16, the p
 **Space complexity:** O(1). The function updates one variable.
 
 </details>
+
+---
 
 ### Exercise 8: A Fixed Inner Loop
 
@@ -239,6 +253,8 @@ The inner loop runs exactly 3 times for each element. There are 3n print calls, 
 
 </details>
 
+---
+
 ### Exercise 9: A Halving Loop for Each Element
 
 What are the time and space complexities of this code?
@@ -265,6 +281,8 @@ For each of the n elements, the inner loop starts over at n and repeatedly halve
 **Space complexity:** O(1). The function reuses a fixed number of variables.
 
 </details>
+
+---
 
 ### Exercise 10: Going Through Two Arrays Separately
 
@@ -295,6 +313,8 @@ Let n = len_array_a and m = len_array_b. The loops run one after the other, visi
 
 </details>
 
+---
+
 ### Exercise 11: Stopping When a Match Is Found
 
 What are the time and space complexities of this code?
@@ -322,6 +342,8 @@ For a nonempty array, the best case occurs when the first element matches. The w
 **Space complexity:** O(1). The search uses a counter and returns a single index.
 
 </details>
+
+---
 
 ### Exercise 12: Three Nested Loops
 
@@ -351,6 +373,8 @@ Each of the three loops runs n times for every iteration of the loop outside it.
 **Space complexity:** O(1). Printing immediately avoids storing the triples.
 
 </details>
+
+---
 
 ### Exercise 13: Copying an Array
 
@@ -385,6 +409,8 @@ Assume a positive length, a valid allocation size, and successful allocation. Th
 
 </details>
 
+---
+
 ### Exercise 14: A Recursive Countdown
 
 What are the time and space complexities of this code?
@@ -412,6 +438,8 @@ For n >= 0, each call reduces n by 1 until it reaches zero. There are n print ca
 
 </details>
 
+---
+
 ### Exercise 15: Two Recursive Calls
 
 What are the time and space complexities of this code?
@@ -437,6 +465,142 @@ For n >= 0, each non-base call makes two calls with n - 1. The number of calls a
 **Time complexity:** O(2ⁿ). The branching doubles the number of calls at each depth.
 
 **Space complexity:** O(n) auxiliary space for the call stack, assuming no call optimization. The two branches run one after the other, so only one path of up to n + 1 calls is active at a time.
+
+</details>
+
+---
+
+### Exercise 16: Recursive Fibonacci
+
+What are the time and space complexities of this code? Assume `n >= 0` and that the result fits in `int`.
+
+```c
+int fibonacci(int n) {
+    if (n <= 1) {
+        return n;
+    }
+    return fibonacci(n - 1) + fibonacci(n - 2);
+}
+```
+
+<details>
+<summary>Show solution</summary>
+
+**Answer: `O(2ⁿ)` time and `O(n)` auxiliary space.**
+
+Each non-base call asks for the two previous Fibonacci numbers. Many of these calculations repeat: for example, `fibonacci(5)` calculates `fibonacci(3)` through both branches.
+
+**Time complexity:** `O(2ⁿ)` is a valid upper bound because each call makes at most two smaller calls and the depth grows with `n`. The branches have different depths, so this is not an exact call count. A tighter growth bound is `Θ(φⁿ)`, where `φ` is about 1.618; `Θ` describes a matching upper and lower growth bound.
+
+**Space complexity:** `O(n)` for the call stack. The deepest path reduces `n` by 1 each time. The calls do not all stay active at once.
+
+</details>
+
+---
+
+### Exercise 17: Recursively Summing an Array
+
+What are the time and space complexities of this code? Assume `n >= 0` and that the sums fit in `int`.
+
+```c
+int sum_array(int array[], int n) {
+    if (n == 0) {
+        return 0;
+    }
+    return array[n - 1] + sum_array(array, n - 1);
+}
+```
+
+<details>
+<summary>Show solution</summary>
+
+**Answer: `O(n)` time and `O(n)` auxiliary space.**
+
+Each call handles the last element of the remaining portion and asks the next call to sum the earlier elements. For `[2, 4, 6]`, the additions work out to `6 + 4 + 2 + 0 = 12`.
+
+**Time complexity:** `O(n)`. There are `n + 1` calls, including the base case. Each call does constant work outside the recursive call.
+
+**Space complexity:** `O(n)` for the call stack under the usual model without recursion optimization. The pending calls wait for the smaller sum before adding their element. Passing the array does not copy it; the extra memory comes from the calls.
+
+</details>
+
+---
+
+### Exercise 18: Printing Permutations
+
+What are the time and space complexities of this code? Start with `print_permutations(array, 0, n)`. Assume `n >= 1` and distinct array values.
+
+```c
+void swap_values(int *a, int *b) {
+    int temp = *a;
+    *a = *b;
+    *b = temp;
+}
+
+void print_permutations(int array[], int start, int n) {
+    if (start == n) {
+        printf("Permutation:");
+        for (int i = 0; i < n; i++) {
+            printf(" %d", array[i]);
+        }
+        printf("\n");
+        return;
+    }
+
+    for (int i = start; i < n; i++) {
+        swap_values(&array[start], &array[i]);
+        print_permutations(array, start + 1, n);
+        swap_values(&array[start], &array[i]);
+    }
+}
+```
+
+<details>
+<summary>Show solution</summary>
+
+**Answer: `O(n × n!)` time and `O(n)` auxiliary space.**
+
+The function picks a value for the current position, then fills the remaining positions recursively. After each recursive call, it swaps back to restore the array before trying the next choice. This is called **backtracking**.
+
+There are `n` choices for the first position, `n - 1` for the second, and so on. Multiplying gives `n!` permutations. For `[1, 2, 3]`, the function prints 6 permutations, each containing 3 values.
+
+**Time complexity:** `O(n × n!)`. There are `n!` permutations, and printing each one takes `O(n)` work. The printing cost matters: this full function is not just `O(n!)`.
+
+**Space complexity:** `O(n)` for the recursive call stack. The function rearranges the existing array and restores it afterward. It prints each permutation immediately, so it does not store all `n!` permutations.
+
+</details>
+
+---
+
+### Exercise 19: Reversing an Array
+
+What are the time and space complexities of this code? Assume `n >= 0`.
+
+```c
+void reverse_array(int array[], int n) {
+    int left = 0;
+    int right = n - 1;
+
+    while (left < right) {
+        int temp = array[left];
+        array[left] = array[right];
+        array[right] = temp;
+        left++;
+        right--;
+    }
+}
+```
+
+<details>
+<summary>Show solution</summary>
+
+**Answer: `O(n)` time and `O(1)` auxiliary space.**
+
+The function swaps the first and last elements, then moves both indices toward the middle. For `[1, 2, 3, 4, 5]`, it swaps 1 with 5 and 2 with 4. The middle element stays in place.
+
+**Time complexity:** `O(n)`. There are `floor(n / 2)` swaps, where `floor` means rounding down. Each swap takes constant work, and dropping the factor of one-half leaves linear growth.
+
+**Space complexity:** `O(1)`. The function changes the original array using only two indices and a temporary variable. This is called reversing the array **in place**.
 
 </details>
 
