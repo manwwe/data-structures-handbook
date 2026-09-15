@@ -136,4 +136,308 @@ Keep both variables because the array lengths can grow independently. If both le
 
 </details>
 
+### Exercise 5: Accessing One Element
+
+What are the time and space complexities of this code?
+
+```c
+void print_first(int array[], int n) {
+    if (n > 0) {
+        printf("First element: %d\n", array[0]);
+    }
+}
+```
+
+<details>
+<summary>Show solution</summary>
+
+**Answer: `O(1)`**
+
+The function checks the length and prints at most one element. It does not go through the array.
+
+**Time complexity:** O(1). The amount of work stays bounded as the array grows.
+
+**Space complexity:** O(1). No extra storage grows with the input.
+
+</details>
+
+### Exercise 6: Skipping Every Other Element
+
+What are the time and space complexities of this code?
+
+```c
+void print_every_other(int array[], int n) {
+    for (int i = 0; i < n; i += 2) {
+        printf("Element at index %d: %d\n", i, array[i]);
+    }
+}
+```
+
+<details>
+<summary>Show solution</summary>
+
+**Answer: `O(n)`**
+
+The loop visits indices 0, 2, 4, and so on. For n = 6, it prints 3 elements. In general, it visits about half the array.
+
+**Time complexity:** O(n). Dropping the constant factor from roughly n / 2 iterations leaves linear growth.
+
+**Space complexity:** O(1). Only a fixed number of variables are needed.
+
+</details>
+
+### Exercise 7: Halving a Number
+
+What are the time and space complexities of this code?
+
+```c
+void print_halves(int n) {
+    while (n > 1) {
+        printf("Current value: %d\n", n);
+        n /= 2;
+    }
+}
+```
+
+<details>
+<summary>Show solution</summary>
+
+**Answer: `O(log n)`**
+
+Assume n >= 1. Each iteration halves n using integer division. For n = 16, the printed values are 16, 8, 4, and 2: four iterations.
+
+**Time complexity:** O(log n). The number of halvings grows logarithmically with the starting value of n.
+
+**Space complexity:** O(1). The function updates one variable.
+
+</details>
+
+### Exercise 8: A Fixed Inner Loop
+
+What are the time and space complexities of this code?
+
+```c
+void print_three_times(int array[], int n) {
+    for (int i = 0; i < n; i++) {
+        for (int repeat = 0; repeat < 3; repeat++) {
+            printf("Repeat %d, element: %d\n", repeat + 1, array[i]);
+        }
+    }
+}
+```
+
+<details>
+<summary>Show solution</summary>
+
+**Answer: `O(n)`**
+
+The inner loop runs exactly 3 times for each element. There are 3n print calls, even though the code has two nested loops.
+
+**Time complexity:** O(n). The inner loop has a fixed size, so dropping the factor of 3 leaves linear growth.
+
+**Space complexity:** O(1). The counters use a fixed amount of memory.
+
+</details>
+
+### Exercise 9: A Halving Loop for Each Element
+
+What are the time and space complexities of this code?
+
+```c
+void print_element_levels(int array[], int n) {
+    for (int i = 0; i < n; i++) {
+        for (int remaining = n; remaining > 1; remaining /= 2) {
+            printf("Element: %d, remaining: %d\n", array[i], remaining);
+        }
+    }
+}
+```
+
+<details>
+<summary>Show solution</summary>
+
+**Answer: `O(n log n)`**
+
+For each of the n elements, the inner loop starts over at n and repeatedly halves its counter. With n = 8, there are 8 × 3 = 24 print calls.
+
+**Time complexity:** O(n log n). Multiply n outer iterations by logarithmic inner work.
+
+**Space complexity:** O(1). The function reuses a fixed number of variables.
+
+</details>
+
+### Exercise 10: Going Through Two Arrays Separately
+
+What are the time and space complexities of this code?
+
+```c
+void print_two_arrays(int array_a[], int len_array_a,
+                      int array_b[], int len_array_b) {
+    for (int i = 0; i < len_array_a; i++) {
+        printf("Array A element: %d\n", array_a[i]);
+    }
+    for (int j = 0; j < len_array_b; j++) {
+        printf("Array B element: %d\n", array_b[j]);
+    }
+}
+```
+
+<details>
+<summary>Show solution</summary>
+
+**Answer: `O(n + m)`**
+
+Let n = len_array_a and m = len_array_b. The loops run one after the other, visiting n elements and then m elements.
+
+**Time complexity:** O(n + m). Add the costs. Keep both variables because the lengths can grow independently.
+
+**Space complexity:** O(1). No extra storage grows with either array.
+
+</details>
+
+### Exercise 11: Stopping When a Match Is Found
+
+What are the time and space complexities of this code?
+
+```c
+int find_value(int array[], int n, int target) {
+    for (int i = 0; i < n; i++) {
+        if (array[i] == target) {
+            return i;
+        }
+    }
+    return -1;
+}
+```
+
+<details>
+<summary>Show solution</summary>
+
+**Answer: `Best case: O(1). Worst case: O(n).`**
+
+For a nonempty array, the best case occurs when the first element matches. The worst case occurs when the target is absent or only the last element matches, so the function checks all n elements.
+
+**Time complexity:** O(1) in the best case and O(n) in the worst case. An early return can change how much work actually runs.
+
+**Space complexity:** O(1). The search uses a counter and returns a single index.
+
+</details>
+
+### Exercise 12: Three Nested Loops
+
+What are the time and space complexities of this code?
+
+```c
+void print_triples(int array[], int n) {
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            for (int k = 0; k < n; k++) {
+                printf("Triple: %d, %d, %d\n", array[i], array[j], array[k]);
+            }
+        }
+    }
+}
+```
+
+<details>
+<summary>Show solution</summary>
+
+**Answer: `O(n³)`**
+
+Each of the three loops runs n times for every iteration of the loop outside it. For n = 3, the function prints 3 × 3 × 3 = 27 triples.
+
+**Time complexity:** O(n³). The print call runs n × n × n times.
+
+**Space complexity:** O(1). Printing immediately avoids storing the triples.
+
+</details>
+
+### Exercise 13: Copying an Array
+
+What are the time and space complexities of this code?
+
+```c
+int *copy_array(int array[], int n) {
+    if (n <= 0) {
+        return NULL;
+    }
+    int *copy = malloc((size_t)n * sizeof *copy);
+    if (copy == NULL) {
+        return NULL;
+    }
+    for (int i = 0; i < n; i++) {
+        copy[i] = array[i];
+    }
+    return copy;
+}
+```
+
+<details>
+<summary>Show solution</summary>
+
+**Answer: `O(n) time and O(n) output space.`**
+
+Assume a positive length, a valid allocation size, and successful allocation. The loop copies each of the n elements once. Include <stdlib.h> for malloc and NULL; the caller must free the returned array when finished.
+
+**Time complexity:** O(n) for the successful copy under the usual allocation cost model. The loop performs n assignments.
+
+**Space complexity:** O(n) for the returned array. If output storage is excluded, auxiliary space is O(1). The input array is not copied onto the call stack.
+
+</details>
+
+### Exercise 14: A Recursive Countdown
+
+What are the time and space complexities of this code?
+
+```c
+void print_countdown(int n) {
+    if (n <= 0) {
+        return;
+    }
+    printf("Countdown: %d\n", n);
+    print_countdown(n - 1);
+}
+```
+
+<details>
+<summary>Show solution</summary>
+
+**Answer: `O(n)`**
+
+For n >= 0, each call reduces n by 1 until it reaches zero. There are n print calls and one final call that returns immediately.
+
+**Time complexity:** O(n). Each call does constant work before making one smaller call.
+
+**Space complexity:** O(n) auxiliary space for the call stack, assuming no tail-call optimization. Up to n + 1 calls are active at once; each stores a fixed amount of information.
+
+</details>
+
+### Exercise 15: Two Recursive Calls
+
+What are the time and space complexities of this code?
+
+```c
+void print_branches(int n) {
+    if (n <= 0) {
+        printf("Reached a leaf\n");
+        return;
+    }
+    print_branches(n - 1);
+    print_branches(n - 1);
+}
+```
+
+<details>
+<summary>Show solution</summary>
+
+**Answer: `O(2ⁿ)`**
+
+For n >= 0, each non-base call makes two calls with n - 1. The number of calls at each depth is 1, 2, 4, and so on. With n = 3, there are 8 leaf prints and 15 calls in total. In general, the total call count is 2^(n + 1) - 1.
+
+**Time complexity:** O(2ⁿ). The branching doubles the number of calls at each depth.
+
+**Space complexity:** O(n) auxiliary space for the call stack, assuming no call optimization. The two branches run one after the other, so only one path of up to n + 1 calls is active at a time.
+
+</details>
+
 [Back to Big-O Notation](../README.md)
