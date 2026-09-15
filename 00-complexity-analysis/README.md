@@ -119,5 +119,7 @@ Before starting with the exercises, let's go over a few important concepts to he
   Filter files
 
 [Exercises in C](exercises/c.md)
+
 [Exercises in C++](exercises/cpp.md)
+
 [Exercises in Python](exercises/python.md)
