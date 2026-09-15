@@ -21,6 +21,9 @@ void myfunc(int array[], int n) {
 }
 ```
 
+<details>
+<summary>Show solution</summary>
+
 **Answer: `O(n)`**
 
 The first loop goes through all `n` elements to calculate the sum. The second goes through them again to calculate the product.
@@ -33,5 +36,7 @@ O(n) + O(n) = O(2n) = O(n)
 **Time complexity:** Going through the same array twice still takes linear time. In Big-O notation, constant factors are ignored.
 
 **Space complexity:** O(1) auxiliary space. The function uses a fixed number of variables, regardless of the array’s size.
+
+</details>
 
 [Back to Big-O Notation](../README.md)
