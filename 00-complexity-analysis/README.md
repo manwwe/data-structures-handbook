@@ -18,73 +18,82 @@ The following are some of the most common Big-O complexities. They show differen
 
 The number of steps stays constant and does not depend on the input size.
 
-**Example:**
-If `n = 10 → 1`
-If `n = 1,000 → 1`
+**Examples:**
+
+- If `n = 10 → 1`
+- If `n = 1,000 → 1`
 
 ### Logarithmic Time Complexity — O(log n)
 
 The algorithm often reduces the input size by half at each step. The number of steps grows slowly as the input grows.
 
-**Example:**
-If `n = 8 → log₂(8) = 3`
-If `n = 1,024 → log₂(1,024) = 10`
+**Examples:**
+
+- If `n = 8 → log₂(8) = 3`
+- If `n = 1,024 → log₂(1,024) = 10`
 
 ### Linear Time Complexity — O(n)
 
 The algorithm goes through each element in the input. The number of steps grows at the same rate as the input size.
 
-**Example:**
-If `n = 10 → n = 10`
-If `n = 100 → n = 100`
+**Examples:**
+
+- If `n = 10 → n = 10`
+- If `n = 100 → n = 100`
 
 ### Linearithmic Time Complexity — O(n log n)
 
 The algorithm goes through all `n` elements while taking about `log n` steps for each one.
 
-**Example:**
-If `n = 8 → n log₂(n) = 8 × 3 = 24`
-If `n = 16 → n log₂(n) = 16 × 4 = 64`
+**Examples:**
+
+- If `n = 8 → n log₂(n) = 8 × 3 = 24`
+- If `n = 16 → n log₂(n) = 16 × 4 = 64`
 
 ### Bilinear Time Complexity — O(n × m)
 
 The algorithm goes through two inputs, comparing each element of the first input with each element of the second.
 
-**Example:**
-If `n = 3` and `m = 4 → n × m = 3 × 4 = 12`
-If `n = 5` and `m = 10 → n × m = 5 × 10 = 50`
+**Examples:**
+
+- If `n = 3` and `m = 4 → n × m = 3 × 4 = 12`
+- If `n = 5` and `m = 10 → n × m = 5 × 10 = 50`
 
 ### Quadratic Time Complexity — O(n²)
 
 The number of steps grows roughly with the input size squared. A common example is going through every possible pair of elements in the input.
 
-**Example:**
-If `n = 10 → n² = 100`
-If `n = 100 → n² = 10,000`
+**Examples:**
+
+- If `n = 10 → n² = 100`
+- If `n = 100 → n² = 10,000`
 
 ### Cubic Time Complexity — O(n³)
 
 The number of steps grows roughly with the input size cubed. A common example is going through every possible combination of three elements in the input.
 
-**Example:**
-If `n = 10 → n³ = 1,000`
-If `n = 100 → n³ = 1,000,000`
+**Examples:**
+
+- If `n = 10 → n³ = 1,000`
+- If `n = 100 → n³ = 1,000,000`
 
 ### Exponential Time Complexity — O(2ⁿ)
 
 The algorithm often goes through all possible subsets of the input elements. The number of steps doubles with each additional element in the input.
 
-**Example:**
-If `n = 5 → 2ⁿ = 2⁵ = 32`
-If `n = 10 → 2ⁿ = 2¹⁰ = 1,024`
+**Examples:**
+
+- If `n = 5 → 2ⁿ = 2⁵ = 32`
+- If `n = 10 → 2ⁿ = 2¹⁰ = 1,024`
 
 ### Factorial Time Complexity — O(n!)
 
 The algorithm often goes through all possible permutations of the input elements. The number of steps grows extremely quickly as the input size increases.
 
-**Example:**
-If `n = 5 → n! = 5! = 120`
-If `n = 10 → n! = 10! = 3,628,800`
+**Examples:**
+
+- If `n = 5 → n! = 5! = 120`
+- If `n = 10 → n! = 10! = 3,628,800`
 
 > **Note:** These examples illustrate the growth of each complexity. The results do not represent the exact number of operations performed by an algorithm.
 
