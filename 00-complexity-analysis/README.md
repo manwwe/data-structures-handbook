@@ -97,9 +97,7 @@ The algorithm often goes through all possible permutations of the input elements
 
 > **Note:** These examples illustrate the growth of each complexity. The results do not represent the exact number of operations performed by an algorithm.
 
-## Practice Exersices
-
-## Before the Exercises
+## Analyzing Time and Space
 
 Before starting with the exercises, let's go over a few important concepts to help us understand the solutions.
 
@@ -116,10 +114,9 @@ Before starting with the exercises, let's go over a few important concepts to he
 - **Nested loops** require counting how often the inner work runs overall. Two nested loops do not automatically mean `O(n²)`. If the outer loop runs `n` times and the inner loop runs a fixed 5 times per outer iteration, with constant work each time, the total is `5n`, or `O(n)`.
 
 - **The case being analyzed** matters. The best case describes the least work for an input of a given size, and the worst case describes the most work. The average case describes the expected work under stated assumptions about the inputs. Always make clear which case a solution considers.
-  Filter files
 
-[Exercises in C](exercises/c.md)
+## Language Guides and Practice
 
-[Exercises in C++](exercises/cpp.md)
-
-[Exercises in Python](exercises/python.md)
+- [Complexity Analysis in C: examples and exercises](c_complexity_analysis.md)
+- [Complexity Analysis in C++: examples and exercises](cpp_complexity_analysis.md)
+- [Complexity Analysis in Python: examples and exercises](python_complexity_analysis.md)

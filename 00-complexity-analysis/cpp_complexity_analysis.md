@@ -1,4 +1,14 @@
-# Exercises in C++
+# Complexity Analysis in C++
+
+Read the [theory](README.md) first, then work through the language examples and exercises.
+
+## Analyze Code Step by Step
+
+Identify the input size, count how often each operation runs, and separate time from auxiliary space. Consecutive loops add their costs; nested loops require counting the total inner work. State whether you are analyzing the best or worst case. Count recursive calls and the maximum number of simultaneously active calls separately.
+
+The examples use C++17. Analyze the operations inside a loop as well as the loop count; a library call may perform work proportional to its input.
+
+## Basic Exercises
 
 These C++17 examples mirror the C exercises so you can compare the same algorithms. Include `<iostream>` for output and `<new>` for the allocation example. Treat each exercise as a separate program fragment; some reuse function names.
 
@@ -608,4 +618,4 @@ The function swaps the first and last elements, then moves both indices toward t
 
 </details>
 
-[Back to Big-O Notation](../README.md)
+[Back to Big-O Notation](README.md)

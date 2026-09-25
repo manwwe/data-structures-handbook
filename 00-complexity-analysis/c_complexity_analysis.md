@@ -1,4 +1,14 @@
-# Exercises in C
+# Complexity Analysis in C
+
+Read the [theory](README.md) first, then work through the language examples and exercises.
+
+## Analyze Code Step by Step
+
+Identify the input size, count how often each operation runs, and separate time from auxiliary space. Consecutive loops add their costs; nested loops require counting the total inner work. State whether you are analyzing the best or worst case. Count recursive calls and the maximum number of simultaneously active calls separately.
+
+For C examples, include `<stdio.h>` for output and `<stdlib.h>` for allocation. Assume valid array lengths and indices and integer arithmetic that fits in `int`. Treat each exercise as a separate fragment; some reuse function names.
+
+## Basic Exercises
 
 ### Exercise 1: Two Loops
 
@@ -604,4 +614,4 @@ The function swaps the first and last elements, then moves both indices toward t
 
 </details>
 
-[Back to Big-O Notation](../README.md)
+[Back to Big-O Notation](README.md)
