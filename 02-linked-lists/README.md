@@ -26,16 +26,7 @@ Logical order:  10 → 20 → 30
 
 These addresses are only an illustration. The second node can be far from the first, and the third can be at a lower address than the second.
 
-In C, a node for a singly linked list can be represented like this:
-
-```c
-struct node {
-    int value;
-    struct node *next;
-};
-```
-
-The `next` pointer connects this node to another node of the same type. In languages with managed references, the idea is similar even though memory management works differently.
+Each node contains a value and a link to another node of the same kind. The details of representing links and managing memory depend on the language.
 
 ## Types of Linked Lists
 
@@ -246,7 +237,7 @@ A linked list uses **O(n)** storage for constant-size values. Each node also nee
 
 Iterative traversal uses **O(1) auxiliary space**: a current-node reference is enough. A recursive traversal can use **O(n) auxiliary space** on the call stack.
 
-In C, dynamically allocated nodes must eventually be freed. Save any link you still need before freeing a node, and never read through a pointer to freed memory. Allocating a node can fail, so check the allocation before writing to it or linking it into the list.
+With manual memory management, dynamically allocated nodes must eventually be released. Save any link you still need before freeing a node, and never read through a pointer to freed memory. Allocating a node can fail, so check the allocation before writing to it or linking it into the list.
 
 To free a whole list, save the current node's next pointer, free the current node, and then move to the saved next node. Repeat until the list is empty.
 
@@ -268,5 +259,10 @@ A linked list does not automatically make insertion or deletion faster. If every
 Linked lists fit tasks where operations happen at the ends or at nodes we already hold references to. A singly linked list can support a stack at its head or a queue with head and tail references. A doubly linked list is useful when moving both forward and backward or removing known nodes frequently.
 
 Arrays are often a better fit for frequent indexed access and compact, efficient traversal. Choose based on the operations the program actually performs, rather than the fact that a linked list can grow one node at a time.
+
+## Language Guides and Practice
+
+- [Linked Lists in C: usage and exercises](c_linked_lists.md)
+- [Linked Lists in C++: usage and exercises](cpp_linked_lists.md)
 
 [Review Arrays](../01-arrays/README.md) · [Review Big-O Notation](../00-complexity-analysis/README.md)
