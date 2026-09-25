@@ -1,22 +1,61 @@
-# Queue Exercises in C++
+# Queues in C
+
+Read the [theory](README.md) first. This guide covers basic usage, then exercises with solutions.
+
+## Represent and Use a Circular Queue
+
+C has no standard queue container. Use a circular array with a front index and a count to avoid shifting elements:
+
+```c
+#include <stdio.h>
+
+int main(void) {
+    int data[5] = {0};
+    const int capacity = 5;
+    int front = 0;
+    int size = 0;
+    if (size < capacity) {
+        int rear = (front + size) % capacity;
+        data[rear] = 10; // Enqueue
+        ++size;
+    }
+    if (size < capacity) {
+        int rear = (front + size) % capacity;
+        data[rear] = 20;
+        ++size;
+    }
+    if (size > 0) {
+        printf("%d\n", data[front]); // Peek: 10
+        int value = data[front];      // Dequeue
+        front = (front + 1) % capacity;
+        --size;
+        printf("%d\n", value);       // 10
+    }
+    front = 0;
+    size = 0; // Clear the logical contents
+    return 0;
+}
+```
+
+`% capacity` wraps an index to the start of storage. Capacity must be positive. Check for a full queue before writing and an empty queue before reading or removing. The exercises group these fields into `queue_t`. Pass `&queue` to functions that change it. Peek and dequeue return success separately from the value, written through an output pointer.
+
+## Basic Exercises
 
 Build a fixed-capacity circular queue one operation at a time. Try each exercise before opening its solution. Combine the following definition and the solutions in order.
 
-```cpp
-constexpr int QUEUE_CAPACITY = 5;
+```c
+#define QUEUE_CAPACITY 5
 
-struct queue_t {
+typedef struct queue {
     int data[QUEUE_CAPACITY];
     int front;
     int size;
-};
+} queue_t;
 ```
 
 Maintain `0 <= front < QUEUE_CAPACITY` and `0 <= size <= QUEUE_CAPACITY`. The capacity is positive. Initialize the queue before calling other operations. All queue pointers must refer to valid objects.
 
 For peek and dequeue, pass a pointer to a separate writable integer, such as `&value`; it must not point inside the queue. Return status is separate from the stored value, so values such as -1 remain valid data. Examples show logical order from front to rear.
-
-These C++17 exercises implement the operations directly instead of using `std::queue`. `constexpr` makes the capacity a compile-time constant.
 
 ### Exercise 1: Initialize a Queue
 
@@ -25,7 +64,7 @@ Write `void queue_init(queue_t *queue)` to initialize an empty queue. Do not cle
 <details>
 <summary>Show solution</summary>
 
-```cpp
+```c
 void queue_init(queue_t *queue) {
     queue->front = 0;
     queue->size = 0;
@@ -49,7 +88,7 @@ Write `int queue_is_empty(const queue_t *queue)` to return 1 if empty and 0 othe
 <details>
 <summary>Show solution</summary>
 
-```cpp
+```c
 int queue_is_empty(const queue_t *queue) {
     return queue->size == 0;
 }
@@ -72,7 +111,7 @@ Write `int queue_is_full(const queue_t *queue)` to return 1 if all slots are occ
 <details>
 <summary>Show solution</summary>
 
-```cpp
+```c
 int queue_is_full(const queue_t *queue) {
     return queue->size == QUEUE_CAPACITY;
 }
@@ -95,7 +134,7 @@ Write `int queue_size(const queue_t *queue)` to return the number of stored elem
 <details>
 <summary>Show solution</summary>
 
-```cpp
+```c
 int queue_size(const queue_t *queue) {
     return queue->size;
 }
@@ -120,7 +159,7 @@ Example: enqueueing 30 into `[10, 20]` produces `[10, 20, 30]`.
 <details>
 <summary>Show solution</summary>
 
-```cpp
+```c
 int queue_enqueue(queue_t *queue, int val) {
     if (queue_is_full(queue)) {
         return 0;
@@ -149,7 +188,7 @@ Write `int queue_peek(const queue_t *queue, int *out_val)` to read the front wit
 <details>
 <summary>Show solution</summary>
 
-```cpp
+```c
 int queue_peek(const queue_t *queue, int *out_val) {
     if (queue_is_empty(queue)) {
         return 0;
@@ -178,7 +217,7 @@ Example: dequeueing `[10, 20, 30]` returns 10 and leaves `[20, 30]`.
 <details>
 <summary>Show solution</summary>
 
-```cpp
+```c
 int queue_dequeue(queue_t *queue, int *out_val) {
     if (queue_is_empty(queue)) {
         return 0;
@@ -207,7 +246,7 @@ Write `void queue_clear(queue_t *queue)` to remove every logical element and mak
 <details>
 <summary>Show solution</summary>
 
-```cpp
+```c
 void queue_clear(queue_t *queue) {
     queue->front = 0;
     queue->size = 0;
@@ -250,4 +289,4 @@ Another enqueue fails because the queue is full. No existing values are overwrit
 
 Check FIFO order, empty peek and dequeue, a failed enqueue on a full queue, storing -1, wraparound after repeated operations, and reuse after clearing. Verify that failures leave state and output unchanged.
 
-[Back to Queues](../README.md)
+[Back to Queues](README.md)

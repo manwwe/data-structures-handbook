@@ -30,7 +30,7 @@ A bounded queue rejects an enqueue when full. A growing queue may need memory al
 
 ### Dequeue
 
-**Dequeue** removes and returns the front element.
+**Dequeue** removes the front element. In this chapter it also returns the removed value; some interfaces require reading the front separately before removal.
 
 ```text
 Before:  [10, 20, 30]
@@ -159,7 +159,7 @@ To dequeue, save the head value, move head to its successor, and release the rem
 
 Both operations take `O(1)` under the usual assumption that allocating or releasing one node takes constant time. Actual allocator costs can vary. Without a tail pointer, finding the insertion point takes `O(n)`.
 
-A linked queue grows one node at a time, but memory allocation can still fail. Check allocation before changing existing links. In C, release dynamically allocated nodes with `free`; in C++, match `new` with `delete` or use an ownership-managing design.
+A linked queue grows one node at a time, but memory allocation can still fail. Check allocation before changing existing links. Release removed nodes when using manual memory management; containers with automatic ownership handle this cleanup for you.
 
 ## Complexity Summary
 
@@ -195,5 +195,10 @@ An interface can return a success flag and write the dequeued or peeked value th
 FIFO describes removal order, not necessarily completion order when multiple workers run concurrently. A basic queue implementation also needs additional coordination before being shared safely between threads.
 
 Use a stack when the newest item should be processed first. Use a priority queue when urgency, rather than arrival order, should decide what comes next.
+
+## Language Guides and Practice
+
+- [Queues in C: usage and exercises](c_queues.md)
+- [Queues in C++: usage and exercises](cpp_queues.md)
 
 [Review Arrays](../01-arrays/README.md) · [Review Linked Lists](../02-linked-lists/README.md) · [Review Stacks](../03-stacks/README.md)
