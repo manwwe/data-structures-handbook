@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title description">
+  <title id="title">Linked lists, at a glance</title>
+  <desc id="description">Three linked-list nodes at scattered addresses, connected from head to null; access needs traversal but insertion at a known position changes links.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto">
+      <path d="M0 0L7 3L0 6" fill="none" stroke="#8199b3" stroke-width="1.5" />
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="1200" height="720" rx="24" fill="#101c30" />
+  <g font-family="Arial, Helvetica, sans-serif">
+    <text x="56" y="55" font-size="15" fill="#62ddd0" text-anchor="start" font-weight="700">DATA STRUCTURES / 02</text>
+    <text x="56" y="108" font-size="38" fill="#f3f7ff" text-anchor="start" font-weight="700">Linked lists, at a glance</text>
+    <text x="56" y="144" font-size="20" fill="#bbcadc" text-anchor="start">Each node stores a value and a link to the next node.</text>
+    <text x="56" y="213" font-size="23" fill="#8af1e5" text-anchor="start" font-weight="700">Follow links, not neighboring memory addresses</text>
+    <rect x="180" y="290" width="180" height="90" rx="10" fill="#143f49" stroke="#8af1e5" stroke-width="2" />
+    <path d="M272 290L272 380" fill="none" stroke="#8199b3" stroke-width="3" />
+    <text x="226" y="345" font-size="30" fill="#8af1e5" text-anchor="middle" font-weight="700">10</text>
+    <text x="317" y="342" font-size="19" fill="#bbcadc" text-anchor="middle">next</text>
+    <text x="270" y="415" font-size="18" fill="#bbcadc" text-anchor="middle">address 1000</text>
+    <rect x="480" y="290" width="180" height="90" rx="10" fill="#143f49" stroke="#8af1e5" stroke-width="2" />
+    <path d="M572 290L572 380" fill="none" stroke="#8199b3" stroke-width="3" />
+    <text x="526" y="345" font-size="30" fill="#8af1e5" text-anchor="middle" font-weight="700">20</text>
+    <text x="617" y="342" font-size="19" fill="#bbcadc" text-anchor="middle">next</text>
+    <text x="570" y="415" font-size="18" fill="#bbcadc" text-anchor="middle">address 2400</text>
+    <rect x="780" y="290" width="180" height="90" rx="10" fill="#143f49" stroke="#8af1e5" stroke-width="2" />
+    <path d="M872 290L872 380" fill="none" stroke="#8199b3" stroke-width="3" />
+    <text x="826" y="345" font-size="30" fill="#8af1e5" text-anchor="middle" font-weight="700">30</text>
+    <text x="917" y="342" font-size="19" fill="#bbcadc" text-anchor="middle">next</text>
+    <text x="870" y="415" font-size="18" fill="#bbcadc" text-anchor="middle">address 1600</text>
+    <text x="180" y="257" font-size="20" fill="#d4caff" text-anchor="start">head</text>
+    <path d="M207 264L207 282" fill="none" stroke="#8199b3" stroke-width="3" marker-end="url(#arrow)" />
+    <path d="M365 335L472 335" fill="none" stroke="#8199b3" stroke-width="3" marker-end="url(#arrow)" />
+    <path d="M665 335L772 335" fill="none" stroke="#8199b3" stroke-width="3" marker-end="url(#arrow)" />
+    <path d="M965 335L1050 335" fill="none" stroke="#8199b3" stroke-width="3" marker-end="url(#arrow)" />
+    <text x="1065" y="342" font-size="22" fill="#bbcadc" text-anchor="start">null</text>
+    <text x="180" y="471" font-size="21" fill="#bbcadc" text-anchor="start">Logical order: 10 → 20 → 30. The final link marks the end.</text>
+    <rect x="56" y="548" width="340" height="100" rx="10" fill="#202d45" />
+    <text x="76" y="579" font-size="20" fill="#8af1e5" text-anchor="start" font-weight="700">Find an index</text>
+    <text x="76" y="607" font-size="18" fill="#bbcadc" text-anchor="start">O(n) worst case</text>
+    <text x="76" y="631" font-size="18" fill="#bbcadc" text-anchor="start">Start at the head.</text>
+    <rect x="430" y="548" width="340" height="100" rx="10" fill="#202d45" />
+    <text x="450" y="579" font-size="20" fill="#8af1e5" text-anchor="start" font-weight="700">Insert after a known node</text>
+    <text x="450" y="607" font-size="18" fill="#bbcadc" text-anchor="start">O(1) link changes</text>
+    <text x="450" y="631" font-size="18" fill="#bbcadc" text-anchor="start">No later values shift.</text>
+    <rect x="804" y="548" width="340" height="100" rx="10" fill="#202d45" />
+    <text x="824" y="579" font-size="20" fill="#8af1e5" text-anchor="start" font-weight="700">Storage</text>
+    <text x="824" y="607" font-size="18" fill="#bbcadc" text-anchor="start">O(n) values and links</text>
+    <text x="824" y="631" font-size="18" fill="#bbcadc" text-anchor="start">Nodes can be scattered.</text>
+    <text x="56" y="692" font-size="15" fill="#bbcadc" text-anchor="start">This is a singly linked list. Example addresses illustrate that physical order can differ from logical order.</text>
+  </g>
+</svg>

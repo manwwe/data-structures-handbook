@@ -2,6 +2,8 @@
 
 A **linked list** stores a sequence of elements in separate objects called **nodes**. Each node holds a value and a link to the next node.
 
+![Three linked-list nodes at scattered addresses, connected from head to null; access needs traversal but insertion at a known position changes links.](assets/linked-lists-overview.svg)
+
 ```text
 head
  |
