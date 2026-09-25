@@ -2,6 +2,8 @@
 
 A **graph** represents relationships between objects. The objects are **vertices** (also called nodes), and their connections are **edges**.
 
+![Undirected graph with edges A-B, A-C, B-C, and B-D alongside matching neighbor lists for all four vertices.](assets/graphs-overview.svg)
+
 ```text
 0 ─── 1 ─── 3
 │     │

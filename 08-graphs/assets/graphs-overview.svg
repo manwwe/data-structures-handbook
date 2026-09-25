@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title description">
+  <title id="title">Graphs, at a glance</title>
+  <desc id="description">Undirected graph with edges A-B, A-C, B-C, and B-D alongside matching neighbor lists for all four vertices.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto">
+      <path d="M0 0L7 3L0 6" fill="none" stroke="#8199b3" stroke-width="1.5" />
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="1200" height="720" rx="24" fill="#101c30" />
+  <g font-family="Arial, Helvetica, sans-serif">
+    <text x="56" y="55" font-size="15" fill="#62ddd0" text-anchor="start" font-weight="700">DATA STRUCTURES / 08</text>
+    <text x="56" y="108" font-size="38" fill="#f3f7ff" text-anchor="start" font-weight="700">Graphs, at a glance</text>
+    <text x="56" y="144" font-size="20" fill="#bbcadc" text-anchor="start">Vertices represent objects. Edges represent their relationships.</text>
+    <text x="56" y="208" font-size="18" fill="#8af1e5" text-anchor="start" font-weight="700">UNDIRECTED GRAPH</text>
+    <path d="M180 290L420 290" fill="none" stroke="#8199b3" stroke-width="3" />
+    <path d="M180 290L180 455" fill="none" stroke="#8199b3" stroke-width="3" />
+    <path d="M420 290L180 455" fill="none" stroke="#8199b3" stroke-width="3" />
+    <path d="M420 290L420 455" fill="none" stroke="#8199b3" stroke-width="3" />
+    <circle cx="180" cy="290" r="32" fill="#202d45" stroke="#8af1e5" stroke-width="3" />
+    <text x="180" y="298" font-size="24" fill="#8af1e5" text-anchor="middle" font-weight="700">A</text>
+    <circle cx="420" cy="290" r="32" fill="#202d45" stroke="#8af1e5" stroke-width="3" />
+    <text x="420" y="298" font-size="24" fill="#8af1e5" text-anchor="middle" font-weight="700">B</text>
+    <circle cx="180" cy="455" r="32" fill="#202d45" stroke="#8af1e5" stroke-width="3" />
+    <text x="180" y="463" font-size="24" fill="#8af1e5" text-anchor="middle" font-weight="700">C</text>
+    <circle cx="420" cy="455" r="32" fill="#202d45" stroke="#8af1e5" stroke-width="3" />
+    <text x="420" y="463" font-size="24" fill="#8af1e5" text-anchor="middle" font-weight="700">D</text>
+    <text x="665" y="208" font-size="18" fill="#8af1e5" text-anchor="start" font-weight="700">ADJACENCY LIST</text>
+    <rect x="650" y="244" width="460" height="48" rx="10" fill="#202d45" />
+    <text x="678" y="276" font-size="23" fill="#d4caff" text-anchor="start" font-weight="700">A</text>
+    <text x="753" y="276" font-size="23" fill="#f3f7ff" text-anchor="start">→  B, C</text>
+    <rect x="650" y="304" width="460" height="48" rx="10" fill="#202d45" />
+    <text x="678" y="336" font-size="23" fill="#d4caff" text-anchor="start" font-weight="700">B</text>
+    <text x="753" y="336" font-size="23" fill="#f3f7ff" text-anchor="start">→  A, C, D</text>
+    <rect x="650" y="364" width="460" height="48" rx="10" fill="#202d45" />
+    <text x="678" y="396" font-size="23" fill="#d4caff" text-anchor="start" font-weight="700">C</text>
+    <text x="753" y="396" font-size="23" fill="#f3f7ff" text-anchor="start">→  A, B</text>
+    <rect x="650" y="424" width="460" height="48" rx="10" fill="#202d45" />
+    <text x="678" y="456" font-size="23" fill="#d4caff" text-anchor="start" font-weight="700">D</text>
+    <text x="753" y="456" font-size="23" fill="#f3f7ff" text-anchor="start">→  B</text>
+    <rect x="56" y="548" width="520" height="100" rx="10" fill="#202d45" />
+    <text x="76" y="579" font-size="20" fill="#8af1e5" text-anchor="start" font-weight="700">Vertices and edges</text>
+    <text x="76" y="607" font-size="18" fill="#bbcadc" text-anchor="start">4 vertices, 4 edges.</text>
+    <text x="76" y="631" font-size="18" fill="#bbcadc" text-anchor="start">Undirected links appear at both endpoints.</text>
+    <rect x="608" y="548" width="536" height="100" rx="10" fill="#202d45" />
+    <text x="628" y="579" font-size="20" fill="#8af1e5" text-anchor="start" font-weight="700">Choose a representation</text>
+    <text x="628" y="607" font-size="18" fill="#bbcadc" text-anchor="start">Adjacency list: O(V + E) storage.</text>
+    <text x="628" y="631" font-size="18" fill="#bbcadc" text-anchor="start">Adjacency matrix: O(V²) storage.</text>
+    <text x="56" y="692" font-size="15" fill="#bbcadc" text-anchor="start">V = number of vertices; E = number of edges. This simple graph has no self-loops or duplicate edges.</text>
+  </g>
+</svg>
