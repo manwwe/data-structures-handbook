@@ -1,4 +1,37 @@
-# Tree Exercises in C++
+# Trees in C++
+
+Read the [theory](README.md) first, then work through the language examples and exercises.
+
+## Represent a Tree and Use Ordered Keys
+
+C++ has no general-purpose standard binary-tree container exposing child links. For a custom tree, define nodes with a value and child pointers; the exercises show this directly. For an ordered collection of unique keys, use `std::set` from `<set>`. It is typically implemented with a balanced search tree, but does not expose nodes or promise a particular tree implementation.
+
+```cpp
+#include <iostream>
+#include <set>
+
+int main() {
+    std::set<int> keys = {20, 10, 30};
+    keys.insert(25);
+    keys.insert(20); // Duplicate: no new element
+    if (keys.find(25) != keys.end()) {
+        std::cout << "Found 25\n";
+    }
+    for (int key : keys) {
+        std::cout << key << " "; // 10 20 25 30
+    }
+    std::cout << "\n";
+    keys.erase(20);
+    std::cout << keys.size() << "\n"; // 3
+    keys.clear();
+}
+```
+
+Search, single-key insertion, and removal by key take O(log n). Iteration follows sorted key order. Use `empty()` before reading the first or last key. Keys cannot be changed through set iterators; remove the old key and insert the new one. For ordered key-value pairs, use `std::map` from `<map>`.
+
+These containers manage memory automatically. The exercises use an unbalanced binary search tree with explicit node ownership to make the structure visible; its operations can take O(n) when the tree becomes a chain.
+
+## Basic Exercises
 
 Build an unbalanced binary search tree with unique integer keys. Try each exercise before opening its solution. Combine the shared definition and solutions in order.
 
@@ -282,4 +315,4 @@ Insert 8, 3, 10, 1, 6, and 14. Inorder output should be 1, 3, 6, 8, 10, 14; coun
 
 Check empty-tree operations, duplicate insertion, absent keys, allocation failure, and deleting a leaf, a one-child node, and a two-child node. Test both a direct right-child successor and a deeper successor that has its own right child. Also delete the only node, clear twice, and reuse the tree after clearing.
 
-[Back to Trees](../README.md)
+[Back to Trees](README.md)

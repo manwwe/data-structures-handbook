@@ -216,4 +216,9 @@ A hash table often offers faster expected exact-key lookup, but does not inheren
 
 A heap is another tree-based structure with a different ordering rule, designed to expose a minimum or maximum efficiently. It is not a BST.
 
+## Language Guides and Practice
+
+- [Trees in C: examples and exercises](c_trees.md)
+- [Trees in C++: examples and exercises](cpp_trees.md)
+
 [Review Linked Lists](../02-linked-lists/README.md) · [Review Queues](../04-queues/README.md) · [Review Hash Tables](../05-hash-tables/README.md)

@@ -1,4 +1,30 @@
-# Tree Exercises in C
+# Trees in C
+
+Read the [theory](README.md) first, then work through the language examples and exercises.
+
+## Use a Binary Search Tree
+
+C has no standard tree container. The exercises define a node with a key and two child pointers. A root pointer identifies the tree; `NULL` represents an empty tree or missing child. Keys smaller than a node go left; larger keys go right.
+
+The following usage example calls the helpers built in the exercises. To run it, put their shared definition and solutions in order before this `main` function, and include `<stdio.h>`.
+
+```c
+int main(void) {
+    node_t *root = NULL;
+    if (!tree_insert(&root, 20) || !tree_insert(&root, 10)) {
+        tree_clear(&root);
+        return 1;
+    }
+    print_inorder(root); // 10, then 20
+    tree_remove(&root, 10);
+    tree_clear(&root);
+    return 0;
+}
+```
+
+Pass `&root` when a function may replace the root pointer. Nodes allocated with `malloc` must eventually be released with `free`; the clear helper releases the whole tree. Do not share owning child pointers or reuse removed nodes. This tree is unbalanced, so search, insertion, and removal can take O(n).
+
+## Basic Exercises
 
 Build an unbalanced binary search tree with unique integer keys. Try each exercise before opening its solution. Combine the shared definition and solutions in order.
 
@@ -280,4 +306,4 @@ Insert 8, 3, 10, 1, 6, and 14. Inorder output should be 1, 3, 6, 8, 10, 14; coun
 
 Check empty-tree operations, duplicate insertion, absent keys, allocation failure, and deleting a leaf, a one-child node, and a two-child node. Test both a direct right-child successor and a deeper successor that has its own right child. Also delete the only node, clear twice, and reuse the tree after clearing.
 
-[Back to Trees](../README.md)
+[Back to Trees](README.md)
