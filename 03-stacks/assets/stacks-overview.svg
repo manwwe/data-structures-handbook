@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title description">
+  <title id="title">Stacks, at a glance</title>
+  <desc id="description">Stack with 30 on top of 20 and 10: peek reads 30 and pop removes 30, demonstrating last in first out.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto">
+      <path d="M0 0L7 3L0 6" fill="none" stroke="#8199b3" stroke-width="1.5" />
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="1200" height="720" rx="24" fill="#101c30" />
+  <g font-family="Arial, Helvetica, sans-serif">
+    <text x="56" y="55" font-size="15" fill="#62ddd0" text-anchor="start" font-weight="700">DATA STRUCTURES / 03</text>
+    <text x="56" y="108" font-size="38" fill="#f3f7ff" text-anchor="start" font-weight="700">Stacks, at a glance</text>
+    <text x="56" y="144" font-size="20" fill="#bbcadc" text-anchor="start">Add and remove at the same end: the top.</text>
+    <text x="56" y="210" font-size="20" fill="#8af1e5" text-anchor="start" font-weight="700">LAST IN, FIRST OUT</text>
+    <rect x="240" y="295" width="230" height="68" rx="10" fill="#143f49" stroke="#8af1e5" stroke-width="2" />
+    <text x="355" y="339" font-size="30" fill="#8af1e5" text-anchor="middle" font-weight="700">30</text>
+    <rect x="240" y="375" width="230" height="68" rx="10" fill="#143f49" stroke="#8af1e5" stroke-width="2" />
+    <text x="355" y="419" font-size="30" fill="#8af1e5" text-anchor="middle" font-weight="700">20</text>
+    <rect x="240" y="455" width="230" height="68" rx="10" fill="#143f49" stroke="#8af1e5" stroke-width="2" />
+    <text x="355" y="499" font-size="30" fill="#8af1e5" text-anchor="middle" font-weight="700">10</text>
+    <text x="125" y="336" font-size="22" fill="#d4caff" text-anchor="start">top</text>
+    <path d="M170 328L230 328" fill="none" stroke="#8199b3" stroke-width="3" marker-end="url(#arrow)" />
+    <text x="300" y="565" font-size="18" fill="#bbcadc" text-anchor="start">bottom</text>
+    <text x="595" y="273" font-size="24" fill="#f3f7ff" text-anchor="start">Push 10 → Push 20 → Push 30</text>
+    <text x="595" y="323" font-size="21" fill="#bbcadc" text-anchor="start">The newest value is on top.</text>
+    <path d="M480 328L570 328" fill="none" stroke="#8199b3" stroke-width="3" marker-end="url(#arrow)" />
+    <text x="595" y="375" font-size="26" fill="#d4caff" text-anchor="start" font-weight="700">Peek → 30</text>
+    <text x="595" y="410" font-size="20" fill="#bbcadc" text-anchor="start">Read it without removing it.</text>
+    <text x="595" y="472" font-size="26" fill="#8af1e5" text-anchor="start" font-weight="700">Pop → removes 30</text>
+    <text x="595" y="507" font-size="20" fill="#bbcadc" text-anchor="start">Next removals: 20, then 10.</text>
+    <rect x="56" y="584" width="520" height="100" rx="10" fill="#202d45" />
+    <text x="76" y="615" font-size="20" fill="#8af1e5" text-anchor="start" font-weight="700">Push / pop / peek</text>
+    <text x="76" y="643" font-size="18" fill="#bbcadc" text-anchor="start">O(1) with a fixed array; push fails if full.</text>
+    <rect x="608" y="584" width="536" height="100" rx="10" fill="#202d45" />
+    <text x="628" y="615" font-size="20" fill="#8af1e5" text-anchor="start" font-weight="700">Check empty before reading or removing</text>
+    <text x="628" y="643" font-size="18" fill="#bbcadc" text-anchor="start">An empty stack has no top value.</text>
+    <text x="56" y="692" font-size="15" fill="#bbcadc" text-anchor="start">Dynamic-array push is O(1) amortized and O(n) when growth copies elements.</text>
+  </g>
+</svg>

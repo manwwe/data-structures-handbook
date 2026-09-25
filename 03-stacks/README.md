@@ -2,6 +2,8 @@
 
 A **stack** stores elements in **last in, first out (LIFO)** order. The most recently added element is the first one removed.
 
+![Stack with 30 on top of 20 and 10: peek reads 30 and pop removes 30, demonstrating last in first out.](assets/stacks-overview.svg)
+
 Think of a stack of plates: you add a plate on top and take the top plate off first. The end where these operations happen is called the **top**.
 
 ```text
