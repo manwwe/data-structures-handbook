@@ -9,7 +9,7 @@ Index:    0    1    2    3
 Value:  [10,  20,  30,  40]
 ```
 
-In languages such as C, C++, and Python, indexing starts at zero. The first element is at index `0`, and the last element of an array with `n` elements is at index `n - 1`.
+The examples in this chapter use zero-based indexing. The first element is at index `0`, and the last element of an array with `n` elements is at index `n - 1`.
 
 The order is the order of the elements in the sequence; an array does not have to be sorted.
 
@@ -31,7 +31,7 @@ Value:      10      20      30      40
 
 To access index `2`, we calculate `1000 + 2 × 4 = 1008`. We do not need to go through the earlier elements. This is why accessing an element by index takes **O(1)** time.
 
-The address and slot size above are examples. In a C array, the slots hold values of the same type. Some array-based containers, such as Python lists, store references to objects instead; the objects themselves do not have to sit next to each other.
+The address and slot size above are examples. Slots can hold values of the same type. Some array-based containers store references to objects instead; the objects themselves do not have to sit next to each other.
 
 ## Length and Capacity
 
@@ -45,7 +45,7 @@ Capacity: 5
 
 The unused slots are available space, not part of the logical sequence. They do not necessarily contain zero or a special empty value.
 
-When using a C array this way, the program must keep track of the logical length separately. The built-in array does not manage it automatically.
+When using fixed storage this way, the logical length must be tracked separately from capacity.
 
 ## Basic Operations
 
@@ -144,9 +144,9 @@ If order does not matter, a different approach is to replace the element being d
 
 ## Fixed-Size and Dynamic Arrays
 
-A **fixed-size array** has a size that cannot change after it is created. A built-in C array is an example. We can change its values, but adding more elements than its storage holds requires separate, larger storage.
+A **fixed-size array** has a size that cannot change after it is created. We can change its values, but adding more elements than its storage holds requires separate, larger storage.
 
-A **dynamic array** manages a backing array and can allocate a larger one when needed. C++ `std::vector` and Python `list` are examples of dynamic-array containers.
+A **dynamic array** manages a backing array and can allocate a larger one when needed.
 
 A typical growth step looks like this:
 
@@ -195,10 +195,10 @@ The main tradeoff is changing the sequence near the beginning or middle: preserv
 
 Choose an array when its access pattern fits the work. If frequent insertion, deletion, or lookup by a key dominates the task, other data structures may be a better fit.
 
-## Practice Exercises
+## Language Guides and Practice
 
-- [Exercises in C](exercises/c.md)
-- [Exercises in C++](exercises/cpp.md)
-- [Exercises in Python](exercises/python.md)
+- [Arrays in C: usage and exercises](c_arrays.md)
+- [Arrays in C++: usage and exercises](cpp_arrays.md)
+- [Arrays in Python: usage and exercises](python_arrays.md)
 
 [Review Big-O Notation](../00-complexity-analysis/README.md)

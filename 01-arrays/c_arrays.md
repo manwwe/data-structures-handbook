@@ -1,4 +1,63 @@
-# Array Exercises in C
+# Arrays in C
+
+Read the [array theory](README.md) first. This guide explains how to use built-in arrays in C, followed by basic exercises.
+
+## Create, Access, and Traverse
+
+A built-in array stores values of one type in contiguous memory. Its size cannot change after creation. No header is required to declare an array; `<stdio.h>` is used here for output.
+
+```c
+#include <stdio.h>
+
+int main(void) {
+    int scores[] = {10, 20, 30};
+    int zeros[5] = {0}; /* All five elements are zero */
+    scores[1] = 25;
+
+    for (int i = 0; i < 3; ++i) {
+        printf("%d\n", scores[i]);
+    }
+    printf("%d\n", zeros[0]);
+    return 0;
+}
+```
+
+Indices start at zero. For three elements, valid indices are `0`, `1`, and `2`. C does not check bounds; using an invalid index causes undefined behavior. Local arrays declared without initialization, such as `int scores[3];`, must be filled before their values are read.
+
+## Length and Capacity
+
+```c
+int values[5] = {10, 20};
+int length = 2;
+const int capacity = 5;
+
+if (length < capacity) {
+    values[length] = 30;
+    ++length;
+}
+```
+
+The physical array has five elements, but we use only the first `length` elements as our sequence. Track this logical length yourself. To insert or delete in the middle while preserving order, shift the later elements. The exercises below show how.
+
+## Pass an Array to a Function
+
+An array parameter is treated as a pointer and does not carry the array's length. Pass the length separately. Use `const` when the function should only read the values:
+
+```c
+int total(const int values[], int length) {
+    int result = 0;
+    for (int i = 0; i < length; ++i) {
+        result += values[i];
+    }
+    return result;
+}
+```
+
+For an actual array, `sizeof(values) / sizeof(values[0])` gives its physical element count. It does not work on a pointer parameter or tell you the logical length of a partially used array. Represent an empty sequence with logical length zero, not a zero-length built-in array.
+
+## Basic Exercises
+
+These solutions are functions, not complete programs. Call them from `main` to try them out.
 
 Try each exercise before opening its solution. Indices start at zero. Assume array lengths and capacities are valid and that integer calculations fit in `int`. Include `<stdio.h>` when using `printf`.
 
@@ -213,4 +272,4 @@ Swap the two outer elements, then move inward. Stop when the indices meet or cro
 
 </details>
 
-[Back to Arrays](../README.md)
+[Back to Arrays](README.md)
