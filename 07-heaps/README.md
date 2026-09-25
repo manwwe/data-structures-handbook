@@ -146,4 +146,9 @@ Use a heap when you repeatedly need the next minimum or maximum without keeping 
 
 Use a queue for arrival order, a stack for newest-first order, or an ordered search tree when sorted traversal and range queries matter. A heap's main strength is efficient access to one extreme.
 
+## Language Guides and Practice
+
+- [Heaps in C: examples and exercises](c_heaps.md)
+- [Heaps in C++: examples and exercises](cpp_heaps.md)
+
 [Review Arrays](../01-arrays/README.md) · [Review Trees](../06-trees/README.md) · [Review Queues](../04-queues/README.md)

@@ -1,19 +1,58 @@
-# Heap Exercises in C
+# Heaps in C++
+
+Read the [theory](README.md) first, then work through the language examples and exercises.
+
+## Use `std::priority_queue`
+
+Include `<queue>` for `std::priority_queue`. Its default form exposes the largest value first. Use `std::greater<int>` from `<functional>` to make the smallest value come first, matching this chapter's min-heap.
+
+```cpp
+#include <functional>
+#include <iostream>
+#include <queue>
+#include <vector>
+
+int main() {
+    std::priority_queue<int, std::vector<int>, std::greater<int>> values;
+    values.push(30);
+    values.push(10);
+    values.push(20);
+    std::cout << values.size() << "\n"; // 3
+    if (!values.empty()) {
+        int smallest = values.top();
+        values.pop();
+        std::cout << smallest << "\n"; // 10
+    }
+    while (!values.empty()) {
+        std::cout << values.top() << " "; // 20 30
+        values.pop();
+    }
+    std::cout << "\n";
+}
+```
+
+`top()` reads without removing. `pop()` removes without returning a value. Both require a nonempty container. Duplicates are allowed. The interface has no indexed access, iteration, or `clear()` member; repeatedly pop to empty it.
+
+Peek, size, and empty checks take O(1). Push and pop require O(log n) heap adjustments. With the vector backing store, an individual push can also take O(n) when storage reallocates; the allocation cost is amortized across pushes. The exercises show the array representation and adjustments directly.
+
+## Basic Exercises
 
 Build a fixed-capacity binary min-heap of integers. Try each exercise before opening its solution. Combine the shared definition and solutions in order; helper dependencies are named in each prompt.
 
-```c
-#define HEAP_CAPACITY 16
+```cpp
+constexpr int HEAP_CAPACITY = 16;
 
-typedef struct heap {
+struct heap_t {
     int data[HEAP_CAPACITY];
     int size;
-} heap_t;
+};
 ```
 
 All heap pointers must refer to valid objects initialized before other operations. Maintain `0 <= size <= HEAP_CAPACITY` and the min-heap rule for all public operations. Duplicates and negative values are valid. For output parameters, pass a separate writable integer outside the heap.
 
 Let `n` be the active element count. Complexity bounds describe how work grows with that count when considering heaps of increasing capacity; this example uses capacity 16. Empty and one-element operations take constant time. The small capacity also keeps child-index calculations within int range.
+
+These C++17 exercises implement heap operations directly instead of using standard heap algorithms or `std::priority_queue`.
 
 ### Exercise 1: Initialize a Heap
 
@@ -22,7 +61,7 @@ Write `void heap_init(heap_t *heap)` to initialize an empty heap. Unused array s
 <details>
 <summary>Show solution</summary>
 
-```c
+```cpp
 void heap_init(heap_t *heap) {
     heap->size = 0;
 }
@@ -45,7 +84,7 @@ Write `heap_size`, `heap_is_empty`, and `heap_is_full`. The checks return 1 for 
 <details>
 <summary>Show solution</summary>
 
-```c
+```cpp
 int heap_size(const heap_t *heap) {
     return heap->size;
 }
@@ -76,7 +115,7 @@ Write `void sift_up(heap_t *heap, int index)`. Assume index is valid and only th
 <details>
 <summary>Show solution</summary>
 
-```c
+```cpp
 void sift_up(heap_t *heap, int index) {
     while (index > 0) {
         int parent = (index - 1) / 2;
@@ -106,7 +145,7 @@ Write `int heap_insert(heap_t *heap, int val)` using `heap_is_full` and `sift_up
 <details>
 <summary>Show solution</summary>
 
-```c
+```cpp
 int heap_insert(heap_t *heap, int val) {
     if (heap_is_full(heap)) return 0;
     int index = heap->size;
@@ -134,7 +173,7 @@ Write `int heap_peek(const heap_t *heap, int *out_val)`. Return 1 and write the 
 <details>
 <summary>Show solution</summary>
 
-```c
+```cpp
 int heap_peek(const heap_t *heap, int *out_val) {
     if (heap_is_empty(heap)) return 0;
     *out_val = heap->data[0];
@@ -159,7 +198,7 @@ Write `void sift_down(heap_t *heap, int index)`. Assume index is valid, its chil
 <details>
 <summary>Show solution</summary>
 
-```c
+```cpp
 void sift_down(heap_t *heap, int index) {
     while (1) {
         int left = 2 * index + 1;
@@ -195,7 +234,7 @@ Write `int heap_pop(heap_t *heap, int *out_val)` using `heap_is_empty` and `sift
 <details>
 <summary>Show solution</summary>
 
-```c
+```cpp
 int heap_pop(heap_t *heap, int *out_val) {
     if (heap_is_empty(heap)) return 0;
     *out_val = heap->data[0];
@@ -225,7 +264,7 @@ Write `int heap_build(heap_t *heap, const int values[], int length)` using `sift
 <details>
 <summary>Show solution</summary>
 
-```c
+```cpp
 int heap_build(heap_t *heap, const int values[], int length) {
     if (length < 0 || length > HEAP_CAPACITY) return 0;
     for (int i = 0; i < length; i++) heap->data[i] = values[i];
@@ -254,7 +293,7 @@ Write `void heap_clear(heap_t *heap)` to remove all logical elements while keepi
 <details>
 <summary>Show solution</summary>
 
-```c
+```cpp
 void heap_clear(heap_t *heap) {
     heap->size = 0;
 }
@@ -274,4 +313,4 @@ Insert 5, 2, 8, 1, and 3. Peek should return 1 without changing size. Repeated p
 
 Check empty peek/pop, full insertion failure, duplicate and negative values, a node with only a left child, and reuse after clearing. Build from sorted, reverse-sorted, empty, and single-element arrays. After each mutation, verify that every parent is at most its children; the entire array need not be sorted.
 
-[Back to Heaps](../README.md)
+[Back to Heaps](README.md)
