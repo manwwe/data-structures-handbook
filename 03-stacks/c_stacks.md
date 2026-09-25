@@ -1,4 +1,37 @@
-# Stack Exercises in C
+# Stacks in C
+
+Read the [theory](README.md) first. This guide covers basic usage, then exercises with solutions.
+
+## Represent and Use a Stack
+
+C has no standard stack container. A simple stack uses an array and a count. The count is also the index of the next free slot:
+
+```c
+#include <stdio.h>
+
+int main(void) {
+    int data[5] = {0};
+    int size = 0;
+    const int capacity = 5;
+    if (size < capacity) {
+        data[size++] = 10; // Push
+    }
+    if (size < capacity) {
+        data[size++] = 20;
+    }
+    if (size > 0) {
+        printf("%d\n", data[size - 1]); // Peek: 20
+        int value = data[--size];       // Pop
+        printf("%d\n", value);         // 20
+    }
+    size = 0; // Clear the logical contents
+    return 0;
+}
+```
+
+Check capacity before writing and check size before reading or removing. No shifting is needed. The exercises group the array and count into `stack_t` and put these operations into functions. Pass `&stack` to change a stack object. Pop and peek return a success flag and write the value through a separate output pointer, so any integer can be stored without being confused with failure.
+
+## Basic Exercises
 
 Build a fixed-capacity integer stack one operation at a time. Try each exercise before opening its solution. The solutions share the following definition and use earlier helpers where stated.
 
@@ -221,4 +254,4 @@ Initialize a stack, then push 10, 20, and 30. Peek should return 30 without chan
 
 Also check an empty pop and peek, a full stack followed by a failed push, a stored value of -1, and reuse after clearing. Confirm that failed operations leave the existing state and output values unchanged.
 
-[Back to Stacks](../README.md)
+[Back to Stacks](README.md)

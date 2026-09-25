@@ -1,4 +1,36 @@
-# Stack Exercises in C++
+# Stacks in C++
+
+Read the [theory](README.md) first. This guide covers basic usage, then exercises with solutions.
+
+## Use `std::stack`
+
+Include `<stack>` for `std::stack<T>`. It provides a LIFO interface and uses `std::deque` as its default underlying container. The container manages storage automatically.
+
+```cpp
+#include <iostream>
+#include <stack>
+
+int main() {
+    std::stack<int> values;
+    values.push(10);
+    values.push(20);
+    std::cout << values.size() << "\n"; // 2
+    if (!values.empty()) {
+        int value = values.top();
+        values.pop();
+        std::cout << value << "\n"; // 20
+    }
+    while (!values.empty()) {
+        values.pop();
+    }
+}
+```
+
+`top()` reads the top element. `pop()` removes it and returns no value, so read `top()` first if you need the value. Both require a nonempty stack. `empty()` and `size()` inspect the state. There is no `clear()` member; repeatedly pop to empty it.
+
+For this integer stack with the default container, push, pop, top, size, and empty take O(1) time. Clearing takes O(n). The stack interface provides neither indexed access nor iteration. The exercises below build the same basic behavior using fixed storage, including an explicit full state.
+
+## Basic Exercises
 
 These C++17 exercises build the stack operations directly on a fixed-capacity array. `constexpr` defines the capacity as a compile-time constant. The solutions can be combined in order; no standard stack container is needed to implement the operations.
 
@@ -223,4 +255,4 @@ Initialize a stack, then push 10, 20, and 30. Peek should return 30 without chan
 
 Also check an empty pop and peek, a full stack followed by a failed push, a stored value of -1, and reuse after clearing. Confirm that failed operations leave the existing state and output values unchanged.
 
-[Back to Stacks](../README.md)
+[Back to Stacks](README.md)

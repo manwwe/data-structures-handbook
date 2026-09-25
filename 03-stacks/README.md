@@ -36,7 +36,7 @@ A bounded stack must check for available space before accepting another element.
 
 ### Pop
 
-**Pop** removes the top element and returns its value.
+**Pop** removes the top element. In this chapter it also returns the removed value; some interfaces require reading the top separately before removal.
 
 ```text
 Before:  [10, 20, 30]
@@ -157,7 +157,7 @@ Ordinary push, pop, and peek use `O(1)` auxiliary space, apart from storage for 
 
 An integer stack can contain any integer, including `-1` or zero. Using one of those values alone to mean “empty” makes the result ambiguous.
 
-One C approach is to return a success flag and write the value through an output pointer:
+One approach is to return a success flag and provide the value separately:
 
 ```text
 Pop succeeds:  return success and store the removed value
@@ -174,5 +174,10 @@ Other interfaces may use exceptions or optional values. The important distinctio
 - **Backtracking:** Save choices so the most recent one can be taken back first.
 
 Use a stack when processing the newest pending item first matches the problem. If the oldest item should be processed first, a queue is a better fit. Frequent access to arbitrary positions is outside the basic stack interface.
+
+## Language Guides and Practice
+
+- [Stacks in C: usage and exercises](c_stacks.md)
+- [Stacks in C++: usage and exercises](cpp_stacks.md)
 
 [Review Arrays](../01-arrays/README.md) · [Review Linked Lists](../02-linked-lists/README.md)
