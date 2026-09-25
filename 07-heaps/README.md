@@ -2,6 +2,8 @@
 
 A **binary heap** keeps a minimum or maximum value easy to reach. It combines two rules: a complete binary-tree shape and an ordering rule between parents and children.
 
+![Min-heap containing 10, 20, 15, 40, 30, and 25, shown as a complete binary tree and its level-order array.](assets/heaps-overview.svg)
+
 A **min-heap** has each parent less than or equal to its children. Its root is therefore a minimum value:
 
 ```text
