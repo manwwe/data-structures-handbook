@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title description">
+  <title id="title">Trees, at a glance</title>
+  <desc id="description">Binary search tree rooted at 20 with children 10 and 30 and leaves 5, 15, 25, and 40; its height is two edges.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto">
+      <path d="M0 0L7 3L0 6" fill="none" stroke="#8199b3" stroke-width="1.5" />
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="1200" height="720" rx="24" fill="#101c30" />
+  <g font-family="Arial, Helvetica, sans-serif">
+    <text x="56" y="55" font-size="15" fill="#62ddd0" text-anchor="start" font-weight="700">DATA STRUCTURES / 06</text>
+    <text x="56" y="108" font-size="38" fill="#f3f7ff" text-anchor="start" font-weight="700">Trees, at a glance</text>
+    <text x="56" y="144" font-size="20" fill="#bbcadc" text-anchor="start">A root, parent-child links, and no cycles. Each non-root node has one parent.</text>
+    <text x="790" y="247" font-size="18" fill="#8af1e5" text-anchor="start" font-weight="700">A BINARY SEARCH TREE</text>
+    <path d="M390 250L235 360" fill="none" stroke="#8199b3" stroke-width="3" />
+    <path d="M390 250L545 360" fill="none" stroke="#8199b3" stroke-width="3" />
+    <path d="M235 360L150 470" fill="none" stroke="#8199b3" stroke-width="3" />
+    <path d="M235 360L320 470" fill="none" stroke="#8199b3" stroke-width="3" />
+    <path d="M545 360L460 470" fill="none" stroke="#8199b3" stroke-width="3" />
+    <path d="M545 360L630 470" fill="none" stroke="#8199b3" stroke-width="3" />
+    <circle cx="390" cy="250" r="32" fill="#202d45" stroke="#8af1e5" stroke-width="3" />
+    <text x="390" y="258" font-size="24" fill="#8af1e5" text-anchor="middle" font-weight="700">20</text>
+    <circle cx="235" cy="360" r="32" fill="#202d45" stroke="#8af1e5" stroke-width="3" />
+    <text x="235" y="368" font-size="24" fill="#8af1e5" text-anchor="middle" font-weight="700">10</text>
+    <circle cx="545" cy="360" r="32" fill="#202d45" stroke="#8af1e5" stroke-width="3" />
+    <text x="545" y="368" font-size="24" fill="#8af1e5" text-anchor="middle" font-weight="700">30</text>
+    <circle cx="150" cy="470" r="32" fill="#202d45" stroke="#8af1e5" stroke-width="3" />
+    <text x="150" y="478" font-size="24" fill="#8af1e5" text-anchor="middle" font-weight="700">5</text>
+    <circle cx="320" cy="470" r="32" fill="#202d45" stroke="#8af1e5" stroke-width="3" />
+    <text x="320" y="478" font-size="24" fill="#8af1e5" text-anchor="middle" font-weight="700">15</text>
+    <circle cx="460" cy="470" r="32" fill="#202d45" stroke="#8af1e5" stroke-width="3" />
+    <text x="460" y="478" font-size="24" fill="#8af1e5" text-anchor="middle" font-weight="700">25</text>
+    <circle cx="630" cy="470" r="32" fill="#202d45" stroke="#8af1e5" stroke-width="3" />
+    <text x="630" y="478" font-size="24" fill="#8af1e5" text-anchor="middle" font-weight="700">40</text>
+    <text x="390" y="199" font-size="20" fill="#d4caff" text-anchor="middle">root</text>
+    <text x="790" y="297" font-size="22" fill="#f3f7ff" text-anchor="start">Left keys &lt; parent key</text>
+    <text x="790" y="339" font-size="22" fill="#f3f7ff" text-anchor="start">Right keys &gt; parent key</text>
+    <text x="790" y="407" font-size="20" fill="#bbcadc" text-anchor="start">Leaves have no children.</text>
+    <text x="790" y="451" font-size="20" fill="#bbcadc" text-anchor="start">Height here: 2 edges</text>
+    <rect x="56" y="548" width="520" height="100" rx="10" fill="#202d45" />
+    <text x="76" y="579" font-size="20" fill="#8af1e5" text-anchor="start" font-weight="700">Search / insert / delete</text>
+    <text x="76" y="607" font-size="18" fill="#bbcadc" text-anchor="start">O(h + 1), where h is height in edges.</text>
+    <rect x="608" y="548" width="536" height="100" rx="10" fill="#202d45" />
+    <text x="628" y="579" font-size="20" fill="#8af1e5" text-anchor="start" font-weight="700">Shape controls cost</text>
+    <text x="628" y="607" font-size="18" fill="#bbcadc" text-anchor="start">Balanced: O(log n). A chain: O(n).</text>
+    <text x="56" y="692" font-size="15" fill="#bbcadc" text-anchor="start">This example uses unique keys. The search-order rule belongs to binary search trees, not every tree.</text>
+  </g>
+</svg>

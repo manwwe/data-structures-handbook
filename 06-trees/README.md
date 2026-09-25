@@ -2,6 +2,8 @@
 
 A **tree** represents relationships between elements as a hierarchy. In a rooted tree, one node is the **root**, and every other node has exactly one parent. Following child links never takes us back to an earlier node: there are no cycles.
 
+![Binary search tree rooted at 20 with children 10 and 30 and leaves 5, 15, 25, and 40; its height is two edges.](assets/trees-overview.svg)
+
 ```text
          A            ← root
         / \
