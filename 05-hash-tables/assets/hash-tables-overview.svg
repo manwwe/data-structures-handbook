@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title description">
+  <title id="title">Hash tables, at a glance</title>
+  <desc id="description">Keys 12 and 17 both map to bucket 2 in a five-bucket hash table and are stored in a collision chain with values 80 and 95.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto">
+      <path d="M0 0L7 3L0 6" fill="none" stroke="#8199b3" stroke-width="1.5" />
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="1200" height="720" rx="24" fill="#101c30" />
+  <g font-family="Arial, Helvetica, sans-serif">
+    <text x="56" y="55" font-size="15" fill="#62ddd0" text-anchor="start" font-weight="700">DATA STRUCTURES / 05</text>
+    <text x="56" y="108" font-size="38" fill="#f3f7ff" text-anchor="start" font-weight="700">Hash tables, at a glance</text>
+    <text x="56" y="144" font-size="20" fill="#bbcadc" text-anchor="start">Hash a key to find a bucket, then compare keys to find its value.</text>
+    <text x="56" y="211" font-size="23" fill="#8af1e5" text-anchor="start" font-weight="700">Different keys can share a bucket</text>
+    <rect x="570" y="255" width="85" height="42" rx="10" fill="#202d45" />
+    <text x="612" y="283" font-size="22" fill="#d4caff" text-anchor="middle">0</text>
+    <rect x="570" y="305" width="85" height="42" rx="10" fill="#202d45" />
+    <text x="612" y="333" font-size="22" fill="#d4caff" text-anchor="middle">1</text>
+    <rect x="570" y="355" width="85" height="42" rx="10" fill="#202d45" />
+    <text x="612" y="383" font-size="22" fill="#d4caff" text-anchor="middle">2</text>
+    <rect x="570" y="405" width="85" height="42" rx="10" fill="#202d45" />
+    <text x="612" y="433" font-size="22" fill="#d4caff" text-anchor="middle">3</text>
+    <rect x="570" y="455" width="85" height="42" rx="10" fill="#202d45" />
+    <text x="612" y="483" font-size="22" fill="#d4caff" text-anchor="middle">4</text>
+    <rect x="70" y="320" width="150" height="60" rx="10" fill="#143f49" stroke="#8af1e5" stroke-width="2" />
+    <text x="145" y="359" font-size="24" fill="#8af1e5" text-anchor="middle">key 12</text>
+    <path d="M230 350L310 350" fill="none" stroke="#8199b3" stroke-width="3" marker-end="url(#arrow)" />
+    <rect x="325" y="320" width="185" height="60" rx="10" fill="#202d45" />
+    <text x="417" y="358" font-size="23" fill="#f3f7ff" text-anchor="middle">key mod 5</text>
+    <path d="M518 350L559 372" fill="none" stroke="#8199b3" stroke-width="3" marker-end="url(#arrow)" />
+    <path d="M664 376L720 376" fill="none" stroke="#8199b3" stroke-width="3" marker-end="url(#arrow)" />
+    <rect x="730" y="347" width="160" height="58" rx="10" fill="#143f49" stroke="#8af1e5" stroke-width="2" />
+    <text x="810" y="384" font-size="24" fill="#8af1e5" text-anchor="middle">12 : 80</text>
+    <path d="M897 376L956 376" fill="none" stroke="#8199b3" stroke-width="3" marker-end="url(#arrow)" />
+    <rect x="966" y="347" width="160" height="58" rx="10" fill="#383359" stroke="#d4caff" stroke-width="2" />
+    <text x="1046" y="384" font-size="24" fill="#d4caff" text-anchor="middle">17 : 95</text>
+    <text x="730" y="441" font-size="21" fill="#bbcadc" text-anchor="start">12 mod 5 = 17 mod 5 = 2</text>
+    <text x="730" y="475" font-size="20" fill="#bbcadc" text-anchor="start">Check keys within the chain.</text>
+    <rect x="56" y="548" width="520" height="100" rx="10" fill="#202d45" />
+    <text x="76" y="579" font-size="20" fill="#8af1e5" text-anchor="start" font-weight="700">Lookup / insert / remove</text>
+    <text x="76" y="607" font-size="18" fill="#bbcadc" text-anchor="start">O(1) expected with suitable hashing</text>
+    <text x="76" y="631" font-size="18" fill="#bbcadc" text-anchor="start">and controlled load; O(n) worst case.</text>
+    <rect x="608" y="548" width="536" height="100" rx="10" fill="#202d45" />
+    <text x="628" y="579" font-size="20" fill="#8af1e5" text-anchor="start" font-weight="700">Collision ≠ replacement</text>
+    <text x="628" y="607" font-size="18" fill="#bbcadc" text-anchor="start">Different keys coexist.</text>
+    <text x="628" y="631" font-size="18" fill="#bbcadc" text-anchor="start">The same key updates its stored value.</text>
+    <text x="56" y="692" font-size="15" fill="#bbcadc" text-anchor="start">Separate chaining example with five buckets. Entries show key : value. Load factor = entries / buckets.</text>
+  </g>
+</svg>

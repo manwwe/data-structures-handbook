@@ -2,6 +2,8 @@
 
 A **hash table** stores values under keys so we can look up a value without searching every entry.
 
+![Keys 12 and 17 both map to bucket 2 in a five-bucket hash table and are stored in a collision chain with values 80 and 95.](assets/hash-tables-overview.svg)
+
 For example, a table might associate student IDs with scores:
 
 ```text
