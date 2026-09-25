@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title description">
+  <title id="title">Big-O, at a glance</title>
+  <desc id="description">Comparison of constant, logarithmic, linear, and quadratic growth for input sizes 8, 64, and 1024.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto">
+      <path d="M0 0L7 3L0 6" fill="none" stroke="#8199b3" stroke-width="1.5" />
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="1200" height="720" rx="24" fill="#101c30" />
+  <g font-family="Arial, Helvetica, sans-serif">
+    <text x="56" y="55" font-size="15" fill="#62ddd0" text-anchor="start" font-weight="700">DATA STRUCTURES / 00</text>
+    <text x="56" y="108" font-size="38" fill="#f3f7ff" text-anchor="start" font-weight="700">Big-O, at a glance</text>
+    <text x="56" y="144" font-size="20" fill="#bbcadc" text-anchor="start">Describe growth as input increases, rather than seconds on a clock.</text>
+    <text x="56" y="202" font-size="23" fill="#8af1e5" text-anchor="start" font-weight="700">How representative functions grow</text>
+    <text x="56" y="233" font-size="18" fill="#bbcadc" text-anchor="start">Illustrative values, not execution times or exact operation counts.</text>
+    <text x="82" y="285" font-size="22" fill="#d4caff" text-anchor="start" font-weight="700">Input n</text>
+    <text x="335" y="285" font-size="22" fill="#d4caff" text-anchor="start" font-weight="700">1</text>
+    <text x="550" y="285" font-size="22" fill="#d4caff" text-anchor="start" font-weight="700">log₂ n</text>
+    <text x="765" y="285" font-size="22" fill="#d4caff" text-anchor="start" font-weight="700">n</text>
+    <text x="980" y="285" font-size="22" fill="#d4caff" text-anchor="start" font-weight="700">n²</text>
+    <rect x="56" y="309" width="1088" height="56" rx="10" fill="#202d45" />
+    <text x="82" y="345" font-size="22" fill="#f3f7ff" text-anchor="start">8</text>
+    <text x="335" y="345" font-size="22" fill="#f3f7ff" text-anchor="start">1</text>
+    <text x="550" y="345" font-size="22" fill="#f3f7ff" text-anchor="start">3</text>
+    <text x="765" y="345" font-size="22" fill="#f3f7ff" text-anchor="start">8</text>
+    <text x="980" y="345" font-size="22" fill="#f3f7ff" text-anchor="start">64</text>
+    <rect x="56" y="379" width="1088" height="56" rx="10" fill="#202d45" />
+    <text x="82" y="415" font-size="22" fill="#f3f7ff" text-anchor="start">64</text>
+    <text x="335" y="415" font-size="22" fill="#f3f7ff" text-anchor="start">1</text>
+    <text x="550" y="415" font-size="22" fill="#f3f7ff" text-anchor="start">6</text>
+    <text x="765" y="415" font-size="22" fill="#f3f7ff" text-anchor="start">64</text>
+    <text x="980" y="415" font-size="22" fill="#f3f7ff" text-anchor="start">4,096</text>
+    <rect x="56" y="449" width="1088" height="56" rx="10" fill="#202d45" />
+    <text x="82" y="485" font-size="22" fill="#f3f7ff" text-anchor="start">1,024</text>
+    <text x="335" y="485" font-size="22" fill="#f3f7ff" text-anchor="start">1</text>
+    <text x="550" y="485" font-size="22" fill="#f3f7ff" text-anchor="start">10</text>
+    <text x="765" y="485" font-size="22" fill="#f3f7ff" text-anchor="start">1,024</text>
+    <text x="980" y="485" font-size="22" fill="#f3f7ff" text-anchor="start">1,048,576</text>
+    <rect x="56" y="548" width="340" height="100" rx="10" fill="#202d45" />
+    <text x="76" y="579" font-size="20" fill="#8af1e5" text-anchor="start" font-weight="700">O(1)</text>
+    <text x="76" y="607" font-size="18" fill="#bbcadc" text-anchor="start">Work stays bounded.</text>
+    <rect x="430" y="548" width="340" height="100" rx="10" fill="#202d45" />
+    <text x="450" y="579" font-size="20" fill="#8af1e5" text-anchor="start" font-weight="700">O(n)</text>
+    <text x="450" y="607" font-size="18" fill="#bbcadc" text-anchor="start">Work grows with input.</text>
+    <rect x="804" y="548" width="340" height="100" rx="10" fill="#202d45" />
+    <text x="824" y="579" font-size="20" fill="#8af1e5" text-anchor="start" font-weight="700">O(n²)</text>
+    <text x="824" y="607" font-size="18" fill="#bbcadc" text-anchor="start">Doubling n quadruples n².</text>
+    <text x="56" y="692" font-size="15" fill="#bbcadc" text-anchor="start">Big-O is an upper bound; specify the case analyzed and distinguish time from auxiliary space.</text>
+  </g>
+</svg>

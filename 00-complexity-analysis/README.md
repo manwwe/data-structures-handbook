@@ -2,6 +2,8 @@
 
 Big-O describes how the **time or space** used by an algorithm **grows** as the input size gets larger. It gives us a ceiling on how fast that growth can be as the input gets larger.
 
+![Comparison of constant, logarithmic, linear, and quadratic growth for input sizes 8, 64, and 1024.](assets/complexity-overview.svg)
+
 Big-O is commonly used to describe worst-case complexity, but Big-O itself does not necessarily mean worst case.
 
 The most important things Big-O is not:
