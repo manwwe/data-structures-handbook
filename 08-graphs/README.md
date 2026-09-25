@@ -191,4 +191,9 @@ For unequal nonnegative edge weights, Dijkstra's algorithm can find shortest pat
 
 These are different problems from ordinary reachability. Choose the representation and algorithm based on what the edges mean and what answer is needed.
 
+## Language Guides and Practice
+
+- [Graphs in C: examples and exercises](c_graphs.md)
+- [Graphs in C++: examples and exercises](cpp_graphs.md)
+
 [Review Queues](../04-queues/README.md) · [Review Trees](../06-trees/README.md) · [Review Heaps](../07-heaps/README.md)

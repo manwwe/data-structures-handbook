@@ -1,21 +1,45 @@
-# Graph Exercises in C++
+# Graphs in C
+
+Read the [theory](README.md) first, then work through the language examples and exercises.
+
+## Use an Adjacency Matrix
+
+C has no standard graph container. The exercises use a two-dimensional integer array: `edges[u][v]` is one when an edge exists and zero otherwise. The vertex count determines the active portion of the matrix.
+
+The following usage example calls the helpers built in the exercises. To run it, put their shared definition and solutions in order before this `main` function, and include `<stdio.h>`.
+
+```c
+int main(void) {
+    graph_t graph;
+    if (!graph_init(&graph, 3)) return 1;
+    graph_add_edge(&graph, 0, 1);
+    graph_add_edge(&graph, 1, 2);
+    printf("%d\n", graph_has_edge(&graph, 0, 1)); // 1
+    printf("%d\n", graph_degree(&graph, 1)); // 2
+    graph_remove_edge(&graph, 0, 1);
+    graph_clear_edges(&graph);
+    return 0;
+}
+```
+
+Validate vertex IDs before indexing. In this simple undirected graph, the matrix stays symmetric and the diagonal stays zero. Adding an existing edge does not create a duplicate. Edge access takes O(1); listing neighbors takes O(V), and matrix storage takes O(V²) when capacity is proportional to the vertex count.
+
+## Basic Exercises
 
 Build a simple, undirected, unweighted graph using an adjacency matrix. Vertices have IDs from 0 through count - 1. Try each exercise before opening its solution; combine the shared definition and functions in order.
 
-```cpp
-constexpr int MAX_VERTICES = 8;
+```c
+#define MAX_VERTICES 8
 
-struct graph_t {
+typedef struct graph {
     int edges[MAX_VERTICES][MAX_VERTICES];
     int count;
-};
+} graph_t;
 ```
 
 Pass valid graph pointers and initialize successfully before other operations. Output arrays must have at least count writable elements and must not overlap the graph. Keep the matrix symmetric with a zero diagonal by using the edge operations below.
 
 Let `V` be the active vertex count. This example supports at most eight vertices. Complexity bounds describe scaling to larger capacities: storage for the embedded matrix is O(MAX_VERTICES²), and the traversal buffers reserve O(MAX_VERTICES) slots even when fewer vertices are active. With capacity proportional to V, these become O(V²) and O(V). Simple operations use O(1) auxiliary space; recursive DFS additionally uses up to O(V) call-stack space.
-
-These C++17 exercises keep the matrix and traversal logic explicit instead of using a graph library.
 
 ### Exercise 1: Initialize a Graph
 
@@ -24,7 +48,7 @@ Write `int graph_init(graph_t *graph, int count)` to create vertices 0 through c
 <details>
 <summary>Show solution</summary>
 
-```cpp
+```c
 int graph_init(graph_t *graph, int count) {
     if (count < 0 || count > MAX_VERTICES) return 0;
     for (int u = 0; u < count; u++) {
@@ -50,7 +74,7 @@ Write `int graph_valid_vertex(const graph_t *graph, int vertex)` to return 1 for
 <details>
 <summary>Show solution</summary>
 
-```cpp
+```c
 int graph_valid_vertex(const graph_t *graph, int vertex) {
     return vertex >= 0 && vertex < graph->count;
 }
@@ -71,7 +95,7 @@ Write `int graph_add_edge(graph_t *graph, int u, int v)` using the validation he
 <details>
 <summary>Show solution</summary>
 
-```cpp
+```c
 int graph_add_edge(graph_t *graph, int u, int v) {
     if (!graph_valid_vertex(graph, u) || !graph_valid_vertex(graph, v) || u == v) return 0;
     if (graph->edges[u][v]) return 0;
@@ -96,7 +120,7 @@ Write `int graph_has_edge(const graph_t *graph, int u, int v)`. Return 1 if an e
 <details>
 <summary>Show solution</summary>
 
-```cpp
+```c
 int graph_has_edge(const graph_t *graph, int u, int v) {
     if (!graph_valid_vertex(graph, u) || !graph_valid_vertex(graph, v)) return 0;
     return graph->edges[u][v] != 0;
@@ -118,7 +142,7 @@ Write `int graph_remove_edge(graph_t *graph, int u, int v)` using `graph_has_edg
 <details>
 <summary>Show solution</summary>
 
-```cpp
+```c
 int graph_remove_edge(graph_t *graph, int u, int v) {
     if (!graph_has_edge(graph, u, v)) return 0;
     graph->edges[u][v] = 0;
@@ -142,7 +166,7 @@ Write `int graph_degree(const graph_t *graph, int vertex)` to return a vertex's 
 <details>
 <summary>Show solution</summary>
 
-```cpp
+```c
 int graph_degree(const graph_t *graph, int vertex) {
     if (!graph_valid_vertex(graph, vertex)) return -1;
     int degree = 0;
@@ -168,7 +192,7 @@ Write `int graph_bfs(const graph_t *graph, int start, int distance[])`. The outp
 <details>
 <summary>Show solution</summary>
 
-```cpp
+```c
 int graph_bfs(const graph_t *graph, int start, int distance[]) {
     if (!graph_valid_vertex(graph, start)) return 0;
     for (int v = 0; v < graph->count; v++) distance[v] = -1;
@@ -205,7 +229,7 @@ Write `void dfs_visit(const graph_t *graph, int vertex, int visited[])` and `int
 <details>
 <summary>Show solution</summary>
 
-```cpp
+```c
 void dfs_visit(const graph_t *graph, int vertex, int visited[]) {
     visited[vertex] = 1;
     for (int v = 0; v < graph->count; v++) {
@@ -238,7 +262,7 @@ Write `int graph_components(const graph_t *graph)` using `dfs_visit`. Return zer
 <details>
 <summary>Show solution</summary>
 
-```cpp
+```c
 int graph_components(const graph_t *graph) {
     int visited[MAX_VERTICES] = {0};
     int components = 0;
@@ -267,7 +291,7 @@ Write `void graph_clear_edges(graph_t *graph)` to remove every edge while retain
 <details>
 <summary>Show solution</summary>
 
-```cpp
+```c
 void graph_clear_edges(graph_t *graph) {
     for (int u = 0; u < graph->count; u++) {
         for (int v = 0; v < graph->count; v++) graph->edges[u][v] = 0;
@@ -287,4 +311,4 @@ Initialize five vertices and add edges (0, 1), (0, 2), (1, 2), and (1, 3). Verte
 
 Check an empty graph, one isolated vertex, cycles, invalid indices, duplicate edges, self-loop rejection, symmetric removal, and a path reaching all vertices. After clearing edges, five active vertices should form five components. Failed initialization and invalid traversal starts must leave existing state or outputs unchanged.
 
-[Back to Graphs](../README.md)
+[Back to Graphs](README.md)
