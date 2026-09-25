@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title description">
+  <title id="title">Queues, at a glance</title>
+  <desc id="description">Queue containing 10, 20, and 30: 10 leaves from the front and 40 enters at the rear, demonstrating first in first out.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto">
+      <path d="M0 0L7 3L0 6" fill="none" stroke="#8199b3" stroke-width="1.5" />
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="1200" height="720" rx="24" fill="#101c30" />
+  <g font-family="Arial, Helvetica, sans-serif">
+    <text x="56" y="55" font-size="15" fill="#62ddd0" text-anchor="start" font-weight="700">DATA STRUCTURES / 04</text>
+    <text x="56" y="108" font-size="38" fill="#f3f7ff" text-anchor="start" font-weight="700">Queues, at a glance</text>
+    <text x="56" y="144" font-size="20" fill="#bbcadc" text-anchor="start">Add at the rear. Remove from the front. Preserve arrival order.</text>
+    <text x="56" y="211" font-size="20" fill="#8af1e5" text-anchor="start" font-weight="700">FIRST IN, FIRST OUT</text>
+    <rect x="300" y="300" width="160" height="100" rx="10" fill="#143f49" stroke="#8af1e5" stroke-width="2" />
+    <text x="380" y="362" font-size="32" fill="#8af1e5" text-anchor="middle" font-weight="700">10</text>
+    <rect x="530" y="300" width="160" height="100" rx="10" fill="#143f49" stroke="#8af1e5" stroke-width="2" />
+    <text x="610" y="362" font-size="32" fill="#8af1e5" text-anchor="middle" font-weight="700">20</text>
+    <rect x="760" y="300" width="160" height="100" rx="10" fill="#143f49" stroke="#8af1e5" stroke-width="2" />
+    <text x="840" y="362" font-size="32" fill="#8af1e5" text-anchor="middle" font-weight="700">30</text>
+    <text x="380" y="270" font-size="22" fill="#d4caff" text-anchor="middle">front</text>
+    <text x="840" y="270" font-size="22" fill="#d4caff" text-anchor="middle">rear</text>
+    <path d="M292 350L160 350" fill="none" stroke="#8199b3" stroke-width="3" marker-end="url(#arrow)" />
+    <text x="90" y="320" font-size="20" fill="#f3f7ff" text-anchor="start">Dequeue</text>
+    <text x="90" y="394" font-size="18" fill="#bbcadc" text-anchor="start">10 leaves first</text>
+    <path d="M1070 350L930 350" fill="none" stroke="#8199b3" stroke-width="3" marker-end="url(#arrow)" />
+    <text x="970" y="320" font-size="20" fill="#f3f7ff" text-anchor="start">Enqueue</text>
+    <text x="965" y="394" font-size="18" fill="#bbcadc" text-anchor="start">40 enters here</text>
+    <text x="300" y="462" font-size="24" fill="#f3f7ff" text-anchor="start">Arrival order: 10 → 20 → 30 → 40</text>
+    <text x="300" y="503" font-size="24" fill="#8af1e5" text-anchor="start">Removal order: 10 → 20 → 30 → 40</text>
+    <rect x="56" y="548" width="520" height="100" rx="10" fill="#202d45" />
+    <text x="76" y="579" font-size="20" fill="#8af1e5" text-anchor="start" font-weight="700">Efficient ends</text>
+    <text x="76" y="607" font-size="18" fill="#bbcadc" text-anchor="start">A circular array avoids shifting on dequeue.</text>
+    <rect x="608" y="548" width="536" height="100" rx="10" fill="#202d45" />
+    <text x="628" y="579" font-size="20" fill="#8af1e5" text-anchor="start" font-weight="700">Enqueue / dequeue / peek</text>
+    <text x="628" y="607" font-size="18" fill="#bbcadc" text-anchor="start">O(1) with a fixed circular array.</text>
+    <text x="56" y="692" font-size="15" fill="#bbcadc" text-anchor="start">Check empty before reading or removing; reject enqueue when a bounded queue is full.</text>
+  </g>
+</svg>

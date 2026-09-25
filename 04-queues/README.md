@@ -2,6 +2,8 @@
 
 A **queue** stores elements in **first in, first out (FIFO)** order. The first element added is the first one removed, like people waiting in line.
 
+![Queue containing 10, 20, and 30: 10 leaves from the front and 40 enters at the rear, demonstrating first in first out.](assets/queues-overview.svg)
+
 Elements enter at the **rear** and leave at the **front**.
 
 ```text
