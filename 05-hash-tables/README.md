@@ -192,4 +192,9 @@ Use them for counting occurrences, checking whether a value has been seen, or as
 
 They are a good fit when key-based access matters more than ordering. If you need sorted traversal or range queries, an ordered structure may be more appropriate.
 
+## Language Guides and Practice
+
+- [Hash Tables in C: examples and exercises](c_hash_tables.md)
+- [Hash Tables in C++: examples and exercises](cpp_hash_tables.md)
+
 [Review Arrays](../01-arrays/README.md) · [Review Linked Lists](../02-linked-lists/README.md)

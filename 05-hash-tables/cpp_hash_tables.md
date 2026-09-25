@@ -1,4 +1,34 @@
-# Hash-Table Exercises in C++
+# Hash Tables in C++
+
+Read the [theory](README.md) first, then work through the language examples and exercises.
+
+## Use `std::unordered_map`
+
+Include `<unordered_map>` for a hash-based key-value container. Keys are unique, and iteration order is unspecified. The container manages allocation and cleanup.
+
+```cpp
+#include <iostream>
+#include <unordered_map>
+
+int main() {
+    std::unordered_map<int, int> scores;
+    scores[10] = 80; // Insert
+    scores[10] = 95; // Update
+    auto found = scores.find(10);
+    if (found != scores.end()) {
+        std::cout << found->second << "\n"; // 95
+    }
+    std::cout << scores.size() << "\n"; // 1
+    scores.erase(10);
+    scores.clear();
+}
+```
+
+`find` checks for a key without inserting it. `operator[]` inserts a missing key with a value-initialized value (zero for `int`), so use `find` for a read-only lookup. `at(key)` reads an existing key and throws `std::out_of_range` if absent. `erase(key)` returns how many entries were removed. `empty()` checks whether any entries remain.
+
+Lookup, insertion, and removal take O(1) on average under suitable hashing, but O(n) in the worst case. Rehashing can invalidate iterators; obtain them again after operations that may rehash. For keys without associated values, use `std::unordered_set` from `<unordered_set>`.
+
+## Basic Exercises
 
 Implement an integer-key, integer-value map using separate chaining. Try each exercise before opening its solution. Combine the shared definition and solutions in order; later exercises name their helper dependencies.
 
@@ -291,4 +321,4 @@ Updating does not change size. Removing the middle entry reconnects its predeces
 
 Check colliding keys, updates without size changes, head/middle/tail removal within a chain, missing keys, negative keys, stored values of zero and -1, and reuse after clearing. A failed allocation must leave existing entries and size unchanged; updating an existing key should not allocate.
 
-[Back to Hash Tables](../README.md)
+[Back to Hash Tables](README.md)

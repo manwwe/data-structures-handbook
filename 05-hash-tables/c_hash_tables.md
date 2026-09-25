@@ -1,4 +1,32 @@
-# Hash-Table Exercises in C
+# Hash Tables in C
+
+Read the [theory](README.md) first, then work through the language examples and exercises.
+
+## Use a Chained Table
+
+C has no standard hash-table container. The exercises define a bucket array whose entries are linked lists. Each entry stores a key, a value, and a next pointer. Inserting an existing key updates its value; collisions keep distinct keys in the same chain.
+
+The following usage example calls the helpers built in the exercises. To run it, put their shared definition and solutions in order before this `main` function, and include `<stdio.h>`.
+
+```c
+int main(void) {
+    table_t table;
+    table_init(&table);
+    if (!table_put(&table, 10, 80)) {
+        table_clear(&table);
+        return 1;
+    }
+    int value;
+    if (table_get(&table, 10, &value)) printf("%d\n", value);
+    table_remove(&table, 10);
+    table_clear(&table);
+    return 0;
+}
+```
+
+Initialize before use and clear when finished. Entries use `malloc` and `free` from `<stdlib.h>`. Check allocation failure, and never copy a live owning table by copying its pointers. This fixed-bucket teaching table does not resize, so chains can grow and lookups can become linear.
+
+## Basic Exercises
 
 Implement an integer-key, integer-value map using separate chaining. Try each exercise before opening its solution. Combine the shared definition and solutions in order; later exercises name their helper dependencies.
 
@@ -289,4 +317,4 @@ Updating does not change size. Removing the middle entry reconnects its predeces
 
 Check colliding keys, updates without size changes, head/middle/tail removal within a chain, missing keys, negative keys, stored values of zero and -1, and reuse after clearing. A failed allocation must leave existing entries and size unchanged; updating an existing key should not allocate.
 
-[Back to Hash Tables](../README.md)
+[Back to Hash Tables](README.md)
