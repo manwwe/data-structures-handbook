@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title description">
+  <title id="title">Arrays: indexed, contiguous storage</title>
+  <desc id="description">An array with four active values, 10, 20, 30, and 40, occupies indices zero through three. Two additional slots provide spare capacity. Length is four and capacity is six. With four-byte slots starting at address 1000, index two is at address 1008. Access and update take constant time; traversal and order-preserving insertion or deletion take linear time in the worst case.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6" fill="none" stroke="#a99aff" stroke-width="1.5"/></marker>
+  </defs>
+  <rect width="1200" height="720" rx="24" fill="#101c30"/>
+  <g font-family="Arial, Helvetica, sans-serif">
+    <text x="56" y="55" fill="#62ddd0" font-size="15" font-weight="700" letter-spacing="3">DATA STRUCTURES / 01</text>
+    <text x="56" y="108" fill="#f3f7ff" font-size="38" font-weight="700">Arrays, at a glance</text>
+    <text x="56" y="144" fill="#bbcadc" font-size="20">An ordered sequence. Equal-size slots. Direct access by index.</text>
+    <text x="56" y="219" fill="#bbcadc" font-size="17">Index</text>
+    <g fill="#bbcadc" font-size="20" text-anchor="middle">
+      <text x="282" y="219">0</text><text x="426" y="219">1</text><text x="570" y="219" fill="#c8bdff" font-weight="700">2</text><text x="714" y="219">3</text><text x="858" y="219">4</text><text x="1002" y="219">5</text>
+    </g>
+    <rect x="210" y="242" width="576" height="88" fill="#143f49"/>
+    <rect x="786" y="242" width="288" height="88" fill="#202e44"/>
+    <rect x="210" y="242" width="864" height="88" rx="5" fill="none" stroke="#647c95" stroke-width="2"/>
+    <path d="M354 242V330 M498 242V330 M642 242V330 M786 242V330 M930 242V330" stroke="#647c95" stroke-width="2"/>
+    <rect x="500" y="244" width="140" height="84" fill="#383359" stroke="#b6a5ff" stroke-width="3"/>
+    <g text-anchor="middle" fill="#8af1e5" font-size="32" font-weight="700">
+      <text x="282" y="298">10</text><text x="426" y="298">20</text><text x="570" y="298" fill="#e5ddff">30</text><text x="714" y="298">40</text>
+    </g>
+    <g text-anchor="middle" fill="#bbcadc" font-size="18"><text x="858" y="293">unused</text><text x="1002" y="293">unused</text></g>
+    <text x="56" y="365" fill="#bbcadc" font-size="17">Address*</text>
+    <g fill="#bbcadc" font-size="18" text-anchor="middle" font-family="monospace">
+      <text x="282" y="365">1000</text><text x="426" y="365">1004</text><text x="570" y="365" fill="#c8bdff">1008</text><text x="714" y="365">1012</text><text x="858" y="365">1016</text><text x="1002" y="365">1020</text>
+    </g>
+    <path d="M210 389v10h576v-10" fill="none" stroke="#62ddd0" stroke-width="2"/>
+    <text x="498" y="428" fill="#8af1e5" font-size="19" text-anchor="middle">Length = 4 active elements</text>
+    <path d="M210 446v10h864v-10" fill="none" stroke="#8199b3" stroke-width="2"/>
+    <text x="642" y="485" fill="#bbcadc" font-size="19" text-anchor="middle">Capacity = 6 available slots in total</text>
+    <rect x="56" y="512" width="1088" height="72" rx="12" fill="#202d45"/>
+    <text x="80" y="542" fill="#d4caff" font-size="18" font-weight="700">DIRECT ACCESS</text>
+    <text x="80" y="568" fill="#bbcadc" font-size="16">*Example: each slot occupies 4 bytes.</text>
+    <text x="520" y="558" fill="#f3f7ff" font-size="24" font-family="monospace">index 2 → 1000 + 2 × 4 = 1008</text>
+    <g font-size="18">
+      <text x="56" y="626" fill="#8af1e5" font-weight="700">Access / update</text><text x="56" y="653" fill="#f3f7ff">O(1)</text>
+      <text x="405" y="626" fill="#8af1e5" font-weight="700">Traverse all elements</text><text x="405" y="653" fill="#f3f7ff">O(n)</text>
+      <text x="790" y="626" fill="#8af1e5" font-weight="700">Insert / delete, preserving order</text><text x="790" y="653" fill="#f3f7ff">O(n) worst case: shift elements</text>
+    </g>
+    <text x="56" y="692" fill="#bbcadc" font-size="15">n = active length. Spare slots are outside the logical sequence; “unused” does not mean zero.</text>
+  </g>
+</svg>

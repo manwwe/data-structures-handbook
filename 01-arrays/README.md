@@ -2,6 +2,8 @@
 
 An **array** stores a sequence of elements in order. Each element has a numbered position called an **index**, which lets us access it directly.
 
+![Array overview: zero-based indices, contiguous storage, four active elements, and capacity for six](assets/arrays-overview.svg)
+
 For example, an array could store four scores:
 
 ```text
