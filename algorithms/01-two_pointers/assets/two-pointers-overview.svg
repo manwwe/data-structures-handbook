@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">Two pointers, at a glance</title>
+  <desc id="desc">Sorted values 1, 2, 4, 6, 8: the endpoints sum to 9, so move left from index 0 to 1 and find 2 plus 8 equals 10.</desc>
+  <g font-family="Arial, Helvetica, sans-serif">
+    <rect x="0" y="0" width="1200" height="720" rx="10" fill="#101c30" stroke="none" stroke-width="2" />
+    <text x="56" y="55" font-size="15" fill="#62ddd0" text-anchor="start">ALGORITHMS / 01</text>
+    <text x="56" y="108" font-size="38" fill="#f3f7ff" text-anchor="start">Two pointers, at a glance</text>
+    <text x="56" y="144" font-size="20" fill="#bbcadc" text-anchor="start">Use sorted order to discard one candidate at a time.</text>
+    <text x="56" y="206" font-size="20" fill="#8af1e5" text-anchor="start">SORTED INPUT · TARGET 10</text>
+    <text x="56" y="307" font-size="19" fill="#bbcadc" text-anchor="start">Start</text>
+    <text x="329" y="248" font-size="18" fill="#bbcadc" text-anchor="middle">0</text>
+    <rect x="275" y="260" width="108" height="68" rx="10" fill="#143f49" stroke="#8af1e5" stroke-width="2" />
+    <text x="329" y="305" font-size="28" fill="#8af1e5" text-anchor="middle">1</text>
+    <text x="461" y="248" font-size="18" fill="#bbcadc" text-anchor="middle">1</text>
+    <rect x="407" y="260" width="108" height="68" rx="10" fill="#202d45" stroke="none" stroke-width="2" />
+    <text x="461" y="305" font-size="28" fill="#f3f7ff" text-anchor="middle">2</text>
+    <text x="593" y="248" font-size="18" fill="#bbcadc" text-anchor="middle">2</text>
+    <rect x="539" y="260" width="108" height="68" rx="10" fill="#202d45" stroke="none" stroke-width="2" />
+    <text x="593" y="305" font-size="28" fill="#f3f7ff" text-anchor="middle">4</text>
+    <text x="725" y="248" font-size="18" fill="#bbcadc" text-anchor="middle">3</text>
+    <rect x="671" y="260" width="108" height="68" rx="10" fill="#202d45" stroke="none" stroke-width="2" />
+    <text x="725" y="305" font-size="28" fill="#f3f7ff" text-anchor="middle">6</text>
+    <text x="857" y="248" font-size="18" fill="#bbcadc" text-anchor="middle">4</text>
+    <rect x="803" y="260" width="108" height="68" rx="10" fill="#143f49" stroke="#8af1e5" stroke-width="2" />
+    <text x="857" y="305" font-size="28" fill="#8af1e5" text-anchor="middle">8</text>
+    <text x="329" y="361" font-size="20" fill="#d4caff" text-anchor="middle">left →</text>
+    <text x="857" y="361" font-size="20" fill="#d4caff" text-anchor="middle">← right</text>
+    <text x="480" y="362" font-size="22" fill="#f3f7ff" text-anchor="start">1 + 8 = 9: too small</text>
+    <text x="56" y="466" font-size="19" fill="#bbcadc" text-anchor="start">Move left</text>
+    <text x="329" y="407" font-size="18" fill="#bbcadc" text-anchor="middle">0</text>
+    <rect x="275" y="419" width="108" height="68" rx="10" fill="#202d45" stroke="none" stroke-width="2" />
+    <text x="329" y="464" font-size="28" fill="#f3f7ff" text-anchor="middle">1</text>
+    <text x="461" y="407" font-size="18" fill="#bbcadc" text-anchor="middle">1</text>
+    <rect x="407" y="419" width="108" height="68" rx="10" fill="#143f49" stroke="#8af1e5" stroke-width="2" />
+    <text x="461" y="464" font-size="28" fill="#8af1e5" text-anchor="middle">2</text>
+    <text x="593" y="407" font-size="18" fill="#bbcadc" text-anchor="middle">2</text>
+    <rect x="539" y="419" width="108" height="68" rx="10" fill="#202d45" stroke="none" stroke-width="2" />
+    <text x="593" y="464" font-size="28" fill="#f3f7ff" text-anchor="middle">4</text>
+    <text x="725" y="407" font-size="18" fill="#bbcadc" text-anchor="middle">3</text>
+    <rect x="671" y="419" width="108" height="68" rx="10" fill="#202d45" stroke="none" stroke-width="2" />
+    <text x="725" y="464" font-size="28" fill="#f3f7ff" text-anchor="middle">6</text>
+    <text x="857" y="407" font-size="18" fill="#bbcadc" text-anchor="middle">4</text>
+    <rect x="803" y="419" width="108" height="68" rx="10" fill="#143f49" stroke="#8af1e5" stroke-width="2" />
+    <text x="857" y="464" font-size="28" fill="#8af1e5" text-anchor="middle">8</text>
+    <text x="461" y="521" font-size="20" fill="#d4caff" text-anchor="middle">left</text>
+    <text x="857" y="521" font-size="20" fill="#d4caff" text-anchor="middle">right</text>
+    <text x="56" y="580" font-size="28" fill="#8af1e5" text-anchor="start">2 + 8 = 10 → return indices (1, 4)</text>
+    <text x="56" y="623" font-size="21" fill="#bbcadc" text-anchor="start">Too small: advance left. Too large: retreat right. Stop when the indices meet.</text>
+    <text x="56" y="686" font-size="17" fill="#bbcadc" text-anchor="start">Two distinct indices. O(n) time and O(1) auxiliary space for a sorted array.</text>
+  </g>
+</svg>
