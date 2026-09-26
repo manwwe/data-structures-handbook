@@ -36,6 +36,16 @@ Each chapter keeps language guides alongside its theory README, with no separate
 
 ## Algorithms
 
-The [algorithms directory](algorithms/) is reserved for techniques that build on these structures: prefix sums, two pointers, sliding windows, fast and slow pointers, binary search, top-k elements, matrix and tree traversal, depth-first search, breadth-first search, and backtracking.
+Algorithm topics are organized into language-specific lessons, each with a worked example, infographic, implementation, complexity analysis, and exercises with hidden solutions. Explanations live directly in each language file; there is no separate topic README. C++17 lessons are currently available, with other languages planned.
 
-These topic directories are currently placeholders. Data structure chapters focus on understanding and using each structure; algorithm techniques belong in their own topics.
+- [Prefix Sums](algorithms/00-prefix_sum/cpp_prefix_sum.md)
+- [Two Pointers](algorithms/01-two_pointers/cpp_two_pointers.md)
+- [Sliding Windows](algorithms/02-sliding_window/cpp_sliding_window.md)
+- [Fast and Slow Pointers](algorithms/03-fast_and_slow_pointers/cpp_fast_and_slow_pointers.md)
+- [Binary Search](algorithms/04-binary_search/cpp_binary_search.md)
+- [Top K Elements](algorithms/05-top_k_elements/cpp_top_k_elements.md)
+- [Matrix Traversal](algorithms/06-matrix_traversal/cpp_matrix_traversal.md)
+- [Binary Tree Traversal](algorithms/07-binary_tree_traversal/cpp_binary_tree_traversal.md)
+- [Depth-First Search (DFS)](algorithms/08-depth_first_search_dfs/cpp_depth_first_search_dfs.md)
+- [Breadth-First Search (BFS)](algorithms/09-breadth_first_search_bfs/cpp_breadth_first_search_bfs.md)
+- [Backtracking](algorithms/10-backtracking/cpp_backtracking.md)
