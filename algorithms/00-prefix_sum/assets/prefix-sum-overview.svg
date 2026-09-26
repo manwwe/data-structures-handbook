@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">Prefix sums: subtract two running totals</title>
+  <desc id="desc">Values 3, 1, 4, 2, 5 have prefix totals 0, 3, 4, 8, 10, 15. The half-open range from 1 to 4 contains 1, 4, and 2. Subtracting prefix 1 from prefix 4 gives 10 minus 3, or 7.</desc>
+  <g font-family="Arial, Helvetica, sans-serif">
+    <rect x="0" y="0" width="1200" height="720" rx="8" fill="#101c30" />
+    <text x="56" y="55" font-size="15" fill="#62ddd0" text-anchor="start">ALGORITHMS / 00</text>
+    <text x="56" y="108" font-size="38" fill="#f3f7ff" text-anchor="start">Prefix sums, at a glance</text>
+    <text x="56" y="144" font-size="20" fill="#bbcadc" text-anchor="start">Build running totals once. Answer a range-sum query with one subtraction.</text>
+    <text x="56" y="219" font-size="18" fill="#bbcadc" text-anchor="start">Input index</text>
+    <text x="56" y="292" font-size="22" fill="#f3f7ff" text-anchor="start">values</text>
+    <text x="324" y="219" font-size="20" fill="#bbcadc" text-anchor="middle">0</text>
+    <rect x="260" y="246" width="128" height="76" rx="8" fill="#202d45" />
+    <text x="324" y="294" font-size="30" fill="#f3f7ff" text-anchor="middle">3</text>
+    <text x="468" y="219" font-size="20" fill="#bbcadc" text-anchor="middle">1</text>
+    <rect x="404" y="246" width="128" height="76" rx="8" fill="#143f49" stroke="#8af1e5" stroke-width="2" />
+    <text x="468" y="294" font-size="30" fill="#8af1e5" text-anchor="middle">1</text>
+    <text x="612" y="219" font-size="20" fill="#bbcadc" text-anchor="middle">2</text>
+    <rect x="548" y="246" width="128" height="76" rx="8" fill="#143f49" stroke="#8af1e5" stroke-width="2" />
+    <text x="612" y="294" font-size="30" fill="#8af1e5" text-anchor="middle">4</text>
+    <text x="756" y="219" font-size="20" fill="#bbcadc" text-anchor="middle">3</text>
+    <rect x="692" y="246" width="128" height="76" rx="8" fill="#143f49" stroke="#8af1e5" stroke-width="2" />
+    <text x="756" y="294" font-size="30" fill="#8af1e5" text-anchor="middle">2</text>
+    <text x="900" y="219" font-size="20" fill="#bbcadc" text-anchor="middle">4</text>
+    <rect x="836" y="246" width="128" height="76" rx="8" fill="#202d45" />
+    <text x="900" y="294" font-size="30" fill="#f3f7ff" text-anchor="middle">5</text>
+    <text x="475" y="356" font-size="20" fill="#8af1e5" text-anchor="start">Query [1, 4): include indices 1, 2, and 3</text>
+    <text x="56" y="415" font-size="18" fill="#bbcadc" text-anchor="start">Prefix index</text>
+    <text x="56" y="484" font-size="22" fill="#f3f7ff" text-anchor="start">prefix</text>
+    <text x="252" y="415" font-size="20" fill="#bbcadc" text-anchor="middle">0</text>
+    <rect x="188" y="439" width="128" height="76" rx="8" fill="#202d45" />
+    <text x="252" y="487" font-size="30" fill="#f3f7ff" text-anchor="middle">0</text>
+    <text x="396" y="415" font-size="20" fill="#d4caff" text-anchor="middle">1</text>
+    <rect x="332" y="439" width="128" height="76" rx="8" fill="#383359" stroke="#d4caff" stroke-width="2" />
+    <text x="396" y="487" font-size="30" fill="#d4caff" text-anchor="middle">3</text>
+    <text x="540" y="415" font-size="20" fill="#bbcadc" text-anchor="middle">2</text>
+    <rect x="476" y="439" width="128" height="76" rx="8" fill="#202d45" />
+    <text x="540" y="487" font-size="30" fill="#f3f7ff" text-anchor="middle">4</text>
+    <text x="684" y="415" font-size="20" fill="#bbcadc" text-anchor="middle">3</text>
+    <rect x="620" y="439" width="128" height="76" rx="8" fill="#202d45" />
+    <text x="684" y="487" font-size="30" fill="#f3f7ff" text-anchor="middle">8</text>
+    <text x="828" y="415" font-size="20" fill="#d4caff" text-anchor="middle">4</text>
+    <rect x="764" y="439" width="128" height="76" rx="8" fill="#383359" stroke="#d4caff" stroke-width="2" />
+    <text x="828" y="487" font-size="30" fill="#d4caff" text-anchor="middle">10</text>
+    <text x="972" y="415" font-size="20" fill="#bbcadc" text-anchor="middle">5</text>
+    <rect x="908" y="439" width="128" height="76" rx="8" fill="#202d45" />
+    <text x="972" y="487" font-size="30" fill="#f3f7ff" text-anchor="middle">15</text>
+    <rect x="56" y="552" width="1088" height="90" rx="8" fill="#202d45" />
+    <text x="80" y="585" font-size="29" fill="#d4caff" text-anchor="start">prefix[4] − prefix[1] = 10 − 3 = 7</text>
+    <text x="80" y="620" font-size="20" fill="#bbcadc" text-anchor="start">Subtract everything before index 1 from the total before index 4.</text>
+    <text x="56" y="685" font-size="18" fill="#bbcadc" text-anchor="start">prefix[k] sums the first k values. Build: O(n). Query: O(1). Extra storage: O(n).</text>
+  </g>
+</svg>
