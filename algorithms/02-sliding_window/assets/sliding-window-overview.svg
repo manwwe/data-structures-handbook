@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">Sliding windows, at a glance</title>
+  <desc id="desc">A length-three window moves from indices 0 through 2 to 1 through 3 in values 2, 1, 5, 1, 3, 2. Subtract 2 and add 1: sum 8 becomes 7.</desc>
+  <g font-family="Arial, Helvetica, sans-serif">
+    <rect x="0" y="0" width="1200" height="720" rx="10" fill="#101c30" stroke="none" stroke-width="2" />
+    <text x="56" y="55" font-size="15" fill="#62ddd0" text-anchor="start">ALGORITHMS / 02</text>
+    <text x="56" y="108" font-size="38" fill="#f3f7ff" text-anchor="start">Sliding windows, at a glance</text>
+    <text x="56" y="144" font-size="20" fill="#bbcadc" text-anchor="start">Reuse the current sum as a contiguous range moves one position.</text>
+    <text x="56" y="206" font-size="20" fill="#8af1e5" text-anchor="start">FIXED WINDOW · LENGTH 3</text>
+    <text x="56" y="307" font-size="19" fill="#bbcadc" text-anchor="start">[0, 3)</text>
+    <text x="329" y="248" font-size="18" fill="#bbcadc" text-anchor="middle">0</text>
+    <rect x="275" y="260" width="108" height="68" rx="10" fill="#143f49" stroke="#8af1e5" stroke-width="2" />
+    <text x="329" y="305" font-size="28" fill="#8af1e5" text-anchor="middle">2</text>
+    <text x="461" y="248" font-size="18" fill="#bbcadc" text-anchor="middle">1</text>
+    <rect x="407" y="260" width="108" height="68" rx="10" fill="#143f49" stroke="#8af1e5" stroke-width="2" />
+    <text x="461" y="305" font-size="28" fill="#8af1e5" text-anchor="middle">1</text>
+    <text x="593" y="248" font-size="18" fill="#bbcadc" text-anchor="middle">2</text>
+    <rect x="539" y="260" width="108" height="68" rx="10" fill="#143f49" stroke="#8af1e5" stroke-width="2" />
+    <text x="593" y="305" font-size="28" fill="#8af1e5" text-anchor="middle">5</text>
+    <text x="725" y="248" font-size="18" fill="#bbcadc" text-anchor="middle">3</text>
+    <rect x="671" y="260" width="108" height="68" rx="10" fill="#202d45" stroke="none" stroke-width="2" />
+    <text x="725" y="305" font-size="28" fill="#f3f7ff" text-anchor="middle">1</text>
+    <text x="857" y="248" font-size="18" fill="#bbcadc" text-anchor="middle">4</text>
+    <rect x="803" y="260" width="108" height="68" rx="10" fill="#202d45" stroke="none" stroke-width="2" />
+    <text x="857" y="305" font-size="28" fill="#f3f7ff" text-anchor="middle">3</text>
+    <text x="989" y="248" font-size="18" fill="#bbcadc" text-anchor="middle">5</text>
+    <rect x="935" y="260" width="108" height="68" rx="10" fill="#202d45" stroke="none" stroke-width="2" />
+    <text x="989" y="305" font-size="28" fill="#f3f7ff" text-anchor="middle">2</text>
+    <text x="56" y="369" font-size="23" fill="#d4caff" text-anchor="start">Sum = 2 + 1 + 5 = 8</text>
+    <text x="56" y="472" font-size="19" fill="#bbcadc" text-anchor="start">[1, 4)</text>
+    <text x="329" y="413" font-size="18" fill="#bbcadc" text-anchor="middle">0</text>
+    <rect x="275" y="425" width="108" height="68" rx="10" fill="#202d45" stroke="none" stroke-width="2" />
+    <text x="329" y="470" font-size="28" fill="#f3f7ff" text-anchor="middle">2</text>
+    <text x="461" y="413" font-size="18" fill="#bbcadc" text-anchor="middle">1</text>
+    <rect x="407" y="425" width="108" height="68" rx="10" fill="#143f49" stroke="#8af1e5" stroke-width="2" />
+    <text x="461" y="470" font-size="28" fill="#8af1e5" text-anchor="middle">1</text>
+    <text x="593" y="413" font-size="18" fill="#bbcadc" text-anchor="middle">2</text>
+    <rect x="539" y="425" width="108" height="68" rx="10" fill="#143f49" stroke="#8af1e5" stroke-width="2" />
+    <text x="593" y="470" font-size="28" fill="#8af1e5" text-anchor="middle">5</text>
+    <text x="725" y="413" font-size="18" fill="#bbcadc" text-anchor="middle">3</text>
+    <rect x="671" y="425" width="108" height="68" rx="10" fill="#143f49" stroke="#8af1e5" stroke-width="2" />
+    <text x="725" y="470" font-size="28" fill="#8af1e5" text-anchor="middle">1</text>
+    <text x="857" y="413" font-size="18" fill="#bbcadc" text-anchor="middle">4</text>
+    <rect x="803" y="425" width="108" height="68" rx="10" fill="#202d45" stroke="none" stroke-width="2" />
+    <text x="857" y="470" font-size="28" fill="#f3f7ff" text-anchor="middle">3</text>
+    <text x="989" y="413" font-size="18" fill="#bbcadc" text-anchor="middle">5</text>
+    <rect x="935" y="425" width="108" height="68" rx="10" fill="#202d45" stroke="none" stroke-width="2" />
+    <text x="989" y="470" font-size="28" fill="#f3f7ff" text-anchor="middle">2</text>
+    <text x="56" y="551" font-size="23" fill="#bbcadc" text-anchor="start">Remove outgoing 2. Add incoming 1.</text>
+    <rect x="56" y="577" width="1088" height="64" rx="10" fill="#202d45" stroke="none" stroke-width="2" />
+    <text x="80" y="620" font-size="29" fill="#8af1e5" text-anchor="start">New sum = 8 − 2 + 1 = 7</text>
+    <text x="56" y="686" font-size="17" fill="#bbcadc" text-anchor="start">Fixed-window sums: O(n) time, O(1) extra space. Negative values are allowed.</text>
+  </g>
+</svg>
