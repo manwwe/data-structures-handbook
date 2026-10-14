@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">Breadth-First Search</title>
+  <desc id="desc">DISCOVER THE START Queue [0]     distance[0] = 0 Mark each vertex as discovered before enqueueing it. PROCESS LEVEL BY LEVEL 0 → queue [1, 2] → queue [2, 3] Distances: 1 and 2 are one edge away; 3 is two. SHORTEST EDGE COUNTS [0, 1, 1, 2, unreachable] Valid for unweighted graphs, not arbitrary edge costs.</desc>
+  <g font-family="Arial, Helvetica, sans-serif">
+    <rect width="1200" height="720" rx="24" fill="#101c30" />
+    <text x="56" y="55" fill="#62ddd0" font-size="15">ALGORITHMS / 09</text>
+    <text x="56" y="108" fill="#f3f7ff" font-size="34">Breadth-First Search, at a glance</text>
+    <text x="56" y="149" fill="#bbcadc" font-size="20">Recognize the pattern. Follow the rule. Check the result.</text>
+    <rect x="56" y="195" width="1088" height="124" rx="12" fill="#202d45" />
+    <circle cx="100" cy="234" r="22" fill="#143f49" stroke="#8af1e5" stroke-width="2" />
+    <text x="94" y="241" fill="#8af1e5" font-size="22">1</text>
+    <text x="142" y="227" fill="#8af1e5" font-size="17">DISCOVER THE START</text>
+    <text x="142" y="263" fill="#d4caff" font-size="25">Queue [0]     distance[0] = 0</text>
+    <text x="142" y="297" fill="#bbcadc" font-size="19">Mark each vertex as discovered before enqueueing it.</text>
+    <rect x="56" y="339" width="1088" height="124" rx="12" fill="#202d45" />
+    <circle cx="100" cy="378" r="22" fill="#143f49" stroke="#8af1e5" stroke-width="2" />
+    <text x="94" y="385" fill="#8af1e5" font-size="22">2</text>
+    <text x="142" y="371" fill="#8af1e5" font-size="17">PROCESS LEVEL BY LEVEL</text>
+    <text x="142" y="407" fill="#d4caff" font-size="25">0 → queue [1, 2] → queue [2, 3]</text>
+    <text x="142" y="441" fill="#bbcadc" font-size="19">Distances: 1 and 2 are one edge away; 3 is two.</text>
+    <rect x="56" y="483" width="1088" height="124" rx="12" fill="#202d45" />
+    <circle cx="100" cy="522" r="22" fill="#143f49" stroke="#8af1e5" stroke-width="2" />
+    <text x="94" y="529" fill="#8af1e5" font-size="22">3</text>
+    <text x="142" y="515" fill="#8af1e5" font-size="17">SHORTEST EDGE COUNTS</text>
+    <text x="142" y="551" fill="#d4caff" font-size="25">[0, 1, 1, 2, unreachable]</text>
+    <text x="142" y="585" fill="#bbcadc" font-size="19">Valid for unweighted graphs, not arbitrary edge costs.</text>
+    <text x="56" y="687" fill="#bbcadc" font-size="17">C++17 · Worked examples and exercises in the accompanying lesson.</text>
+  </g>
+</svg>
